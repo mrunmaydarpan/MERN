@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Number Of Days</title>
+</head>
+
+<body>
+    <script>
+        let year = +prompt("Enter Year:");
+        let month = +prompt("Enter Month:");
+        let leapYear = false;
+
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            console.log("Year " + year + " is leap year");
+            leapYear = true;
+        } else {
+            console.log("Year " + year + " is not leap year")
+            leapYear = false;
+        }
+        switch (month) {
+            case 1:
+                console.log("Month Jan has 31 Days");
+                break;
+            case 2:
+                if (leapYear == true) {
+                    console.log("Month Feb has 29 Days");
+                } else {
+                    console.log("Month Feb has 28 Days");
+                }
+                break;
+            case 3:
+                console.log("Month Mar has 31 Days");
+                break;
+            case 4:
+                console.log("Month Apr has 30 Days");
+                break;
+            case 5:
+                console.log("Month May has 31 Days");
+                break;
+            case 6:
+                console.log("Month Jun has 30 Days");
+                break;
+            case 7:
+                console.log("Month Jul has 31 Days");
+                break;
+            case 8:
+                console.log("Month Aug has 31 Days");
+                break;
+            case 9:
+                console.log("Month Sep has 30 Days");
+                break;
+            case 10:
+                console.log("Month Oct has 31 Days");
+                break;
+            case 11:
+                console.log("Month Nov has 30 Days");
+                break;
+            case 12:
+                console.log("Month Dec has 31 Days");
+                break;
+            default:
+                console.log("invalid month");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ATM Currency Counter</title>
+</head>
+
+<body>
+    <script>
+        let a = +prompt("enter amount:");
+        if (a % 100 === 0) {
+            if (a >= 2000) {
+                var b = Math.trunc(a / 2000);
+                console.log("number of 2000: " + b);
+                a = a - (b * 2000);
+            }
+            if (a >= 500) {
+                var b = Math.trunc(a / 500);
+                console.log("number of 500: " + b);
+                a = a - (b * 500);
+            }
+            if (a >= 200) {
+                var b = Math.trunc(a / 200);
+                console.log("number of 200: " + b);
+                a = a - (b * 200);
+            }
+            if (a >= 100) {
+                var b = Math.trunc(a / 100);
+                console.log("number of 100: " + b);
+                a = a - (b * 100);
+            }
+        } else {
+            console.log("invalid amount");
+        }
+    </script>
+</body>
+
+</html>

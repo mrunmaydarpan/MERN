@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>fibonacci series</title>
+</head>
+
+<body>
+    <script>
+        function fib() {
+            let a = 0
+            let b = 1
+
+            let n = +prompt("enter n (Upper limit) range:");
+            let str = '';
+
+            for (; ;) {
+                let c = a + b;
+                if (c > n) {
+                    break;
+                }
+                str = str + " " + a;
+                a = b;
+                b = c;
+            }
+            console.log(str);
+        }
+        fib();
+    </script>
+</body>
+
+</html>

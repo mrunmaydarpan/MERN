@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bill generator</title>
+</head>
+
+<body>
+    <script>
+        let unit = + prompt("enter units");
+        let bill = 0;
+
+        if (unit > 5) {
+            if (unit < 15) {
+                bill = 50 + (unit - 4) * 8;
+                console.log("bill: " + bill);
+            }
+            else if (unit < 20) {
+                bill = 50 + (10 * 8) + (unit - 14) * 15;
+                console.log("bill: " + bill);
+            }
+            else if (unit >= 20) {
+                bill = 50 + (10 * 8) + (5 * 15) + (unit - 19) * 18;
+                console.log("bill: " + bill);
+            }
+        } else {
+            bill = 50;
+            console.log("Bill is: " + bill);
+        }
+    </script>
+</body>
+
+</html>

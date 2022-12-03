@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+         *
+        **
+       ***
+      ****
+     *****
+-->
+
+<head>
+    <title>06 pattern</title>
+</head>
+
+<body>
+    <script>
+        let output = "";
+        let n = +prompt("e");
+
+        for (let i = 1; i <= n; i++) {
+            for (let j = 0; j < n - i; j++) {
+                output += " ";
+            }
+            for (let k = 1; k <= i; k++) {
+                output += "*";
+            }
+            output += "\n";
+        }
+        console.log(output);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>prime number check</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt("enter Number");
+        let count = 0;
+
+        function prime() {
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    count++;
+                }
+            }
+            if (count == 0) {
+                window.alert(num + " is a prime number");
+            } else {
+                window.alert(num + " is not a prime number");
+            }
+        }
+        prime();
+    </script>
+</body>
+
+</html>

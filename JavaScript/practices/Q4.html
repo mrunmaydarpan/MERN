@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibonacci series</title>
+</head>
+
+<body>
+    <script>
+        function fib() {
+            let a = 0
+            let b = 1
+            let c = 0;
+            let n = +prompt("enter n (Upper limit) range:");
+
+            if (n == 1) {
+                console.log(0);
+                return;
+            }
+
+            for (; ;) {
+                c = a + b;
+
+                if (c >= n) {
+                    if (c == n) {
+                        console.log("is a fibonacci number");
+                        // document.write("is a fibonacci number");
+                    }
+                    else {
+                        console.log("not a fibonacci number");
+                        // document.write("is a fibonacci number");
+                    }
+                    break;
+                }
+                a = b;
+                b = c;
+            }
+            // console.log(str);
+        }
+        fib();
+    </script>
+</body>
+
+</html>

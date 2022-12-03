@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>strong num check</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt("enter number for factorial:");
+        let tempNum = num;
+        let strong = 0;
+
+        while (num) {
+            let fact = 1;
+            let rem = num % 10;
+            for (let i = rem; i >= 1; i--) {
+                fact *= i;
+            }
+            strong += fact;
+            num = Math.trunc(num / 10);
+        }
+        if (strong == tempNum)
+            window.alert("strong number");
+        else
+            window.alert("not a strong number");
+    </script>
+</body>
+
+</html>

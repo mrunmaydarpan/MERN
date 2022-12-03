@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>reverse given number</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt("enter number");
+        let temp = num;
+        let rev = 0;
+
+        function sum_num() {
+            while (num > 0) {
+                let r = num % 10;
+                num = Math.trunc(num / 10);
+                rev = rev * 10 + r;
+            }
+            window.alert("reverse number of " + temp + " is " + rev);
+        }
+        sum_num();
+    </script>
+</body>
+
+</html>

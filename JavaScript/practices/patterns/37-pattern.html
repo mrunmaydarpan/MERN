@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+        *
+       **
+      ***
+     ****
+    *****
+     ****
+      ***
+       **
+        *
+-->
+
+<head>
+    <title>37 pattern</title>
+</head>
+
+<body>
+    <script>
+        let output = "";
+        let length = +prompt("length");
+        //tejas sir way
+        function pattern() {
+            for (let row = 1; row <= 2 * length - 1; row++) {
+                // let colCond = (row <= length) ? row : 2 * length - row;
+                for (let col = 1; col <= length; col++) {
+                    output += (row <= length) ? (col <= length - row) ? " " : "*" : (col <= row - length) ? " " : "*";
+                }
+                output += '\n';
+            }
+            console.log(output);
+        }
+        pattern();
+    </script>
+</body>
+
+</html>

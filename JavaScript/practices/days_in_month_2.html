@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>days in month 2</title>
+</head>
+
+<body>
+    <script>
+        let y = +prompt("enter year");
+        let m = +prompt("enter Month");
+
+        switch (m) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                console.log("31days");
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                console.log("30 days");
+            case 2:
+                if (y % 400 == 0 || y % 4 == 0 && y % 100 != 0) {
+                    console.log("29days");
+                } else {
+                    console.log("28day");
+                }
+                break;
+            default:
+                console.log("invalid month");
+        }
+    </script>
+</body>
+
+</html>

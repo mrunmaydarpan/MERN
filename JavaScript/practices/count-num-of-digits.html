@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>count number of digits</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt("enter number");
+        let count = 0;
+
+        function sum_num() {
+            while (num > 0) {
+                num = Math.trunc(num / 10);
+                count++;
+            }
+            window.alert("number of digits: " + count);
+        }
+        sum_num();
+    </script>
+</body>
+
+</html>

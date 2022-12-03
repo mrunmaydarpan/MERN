@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>calculator</title>
+</head>
+
+<body>
+    <script>
+        num1 = +prompt("Enter Num-1:");
+        num2 = +prompt("Enter Num-2:");
+        opp = prompt("Enter Operation:");
+
+        switch (opp) {
+            case "+":
+                console.log(num1 + num2);
+                break;
+            case "-":
+                console.log(num1 + "-" + num2 + "=" + Number(num1 - num2));
+                break;
+            case "*":
+                console.log(num1 + "x" + num2 + "=" + Number(num1 * num2));
+                break;
+            case "/":
+                console.log(num1 + "/" + num2 + "=" + Number(num1 / num2));
+                break;
+            case "%":
+                console.log(num1 + "%" + num2 + "=" + Number(num1 % num2));
+                break;
+            default:
+                console.log("invalid operator");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>dec to binary</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt("enter number");
+        let bin = 0;
+        let p = 0;
+
+        while (num > 0) {
+            let rem = num % 2;
+            bin += rem * Math.pow(10, p++);
+            num = Math.trunc(num / 2);
+        }
+
+        window.alert(bin);
+    </script>
+</body>
+
+</html>

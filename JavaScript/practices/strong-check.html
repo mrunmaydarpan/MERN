@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>strong num check</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt("enter number for factorial:");
+        let tempNum = num;
+        let strong = 0;
+
+        while (num) {
+            console.log(">----while in");
+            let fact = 1;
+            let rem = num % 10;
+            console.log(" rem: " + rem);
+            for (let i = rem; i >= 1; i--) {
+                console.log(">----for i: " + i);
+                console.log("fact: " + fact + " x " + i + " = " + (fact * i));
+                fact *= i;
+            }
+            console.log("<----for out");
+            console.log("strong: " + strong + " + " + fact + " = " + (strong + fact));
+            strong += fact;
+            num = Math.trunc(num / 10);
+            console.log("num left: " + num);
+            console.log("+----while end");
+        }
+        console.log("<----while out");
+        if (strong == tempNum)
+            window.alert("strong number");
+        else
+            window.alert("not a strong number");
+    </script>
+</body>
+
+</html>

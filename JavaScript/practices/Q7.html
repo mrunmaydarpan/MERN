@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>sum of given number</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt("enter number");
+        let sum = 0;
+        let temp = num;
+
+        function sum_num() {
+            for (; num > 0;) {
+                let r = n % 10;
+                sum = sum + r;
+                num = Math.trunc(num / 10);
+            }
+            window.alert(sum);
+        }
+        sum_num();
+    </script>
+</body>
+
+</html>

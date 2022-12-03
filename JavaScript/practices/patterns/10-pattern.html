@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+        * 
+       * * 
+      * * * 
+     * * * * 
+    * * * * * 
+-->
+
+<head>
+    <title>10 pattern</title>
+</head>
+
+<body>
+    <script>
+        //own logic
+        let length = +prompt("length");
+        let pattern = "";
+        function p1() {
+            for (let row = 1; row <= length; row++) {
+                for (let col = 1; col <= length; col++) {
+                    pattern += (col <= length - row) ? " " : "* ";
+                }
+                pattern += '\n';
+            }
+            console.log(pattern);
+        }
+        //tejas sir logic
+        function p2() {
+            for (let row = 1; row <= length; row++) {
+                for (let col = 1; col <= length + row - 1; col++) {
+                    pattern += (col <= length - row) ? " " : (col % 2 == row % 2) ? "*" : " ";
+                }
+                pattern += '\n';
+            }
+            console.log(pattern);
+        }
+        p2();
+        // p1();
+    </script>
+</body>
+
+</html>

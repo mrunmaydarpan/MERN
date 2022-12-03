@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>fibonacci series</title>
+</head>
+
+<body>
+    <script>
+        function fib() {
+            let a = 0
+            let b = 1
+            let c = 0;
+            let n = +prompt("enter n (Upper limit) range:");
+            n = n * 2;
+            let str = '';
+            str = str + a + " ";
+            if (n == 1) {
+                console.log(0);
+                return;
+            }
+
+            for (let i = 1; i <= n - 2; i++) {
+                c = a + b;
+                a = b;
+                b = c;
+                if (i % 2 == 0) {
+                    continue;
+                }
+                str = str + " " + c;
+            }
+            document.write(str);
+        };
+        fib();
+    </script>
+</body>
+
+</html>

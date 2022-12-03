@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>prime number</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt("enter number");
+        let count = 0;
+        for (let i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                count++;
+            }
+        }
+        if (count == 2) {
+            console.log("is a prime number");
+        } else {
+            console.log("is not a prime number");
+        }
+    </script>
+</body>
+
+</html>
