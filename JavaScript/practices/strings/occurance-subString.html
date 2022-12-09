@@ -1,0 +1,12 @@
+<script>
+    let str = prompt("enter String");
+    let subStr = prompt("enter subString");
+    let count = 0;
+
+    for (let i = 0; i <= str.length - subStr.length; i++) {
+        if (str.slice(i, i + subStr.length) === subStr) {
+            count++;
+        }
+    }
+    window.alert(subStr + ' = ' + count);
+</script>

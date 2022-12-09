@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    12345
+    22345
+    33345
+    44445
+    55555
+-->
+
+<head>
+    <title>38 pattern</title>
+</head>
+
+<body>
+    <script>
+        let length = 5;
+        let pattern = "";
+
+        for (let row = 1; row <= length; row++) {
+            for (let col = 1; col <= length; col++) {
+                pattern += (col <= row) ? row : col;
+            }
+            pattern += '\n';
+        }
+        console.log(pattern);
+    </script>
+</body>
+
+</html>

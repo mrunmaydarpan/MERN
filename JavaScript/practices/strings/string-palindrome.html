@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>string palindrome</title>
+</head>
+
+<body>
+    <script>
+        let str = prompt("enter a String");
+        let revStr = "";
+
+        for (let i = str.length - 1; i >= 0; i--) {
+            revStr += str[i];
+        }
+
+        if (str == revStr) {
+            window.alert("string is palindrome");
+        } else {
+            window.alert("not a palindrome string");
+        }
+    </script>
+</body>
+
+</html>

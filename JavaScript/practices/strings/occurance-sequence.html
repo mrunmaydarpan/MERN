@@ -1,0 +1,15 @@
+<script>
+    let str = prompt("enter string");
+    let output = "";
+    let count = 1;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i + 1]) {
+            count++;
+        } else {
+            output += str[i] + count;
+            count = 1;
+        }
+    }
+    console.log(output);
+</script>

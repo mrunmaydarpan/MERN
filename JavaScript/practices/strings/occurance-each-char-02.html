@@ -1,0 +1,10 @@
+<script>
+    let str = prompt("enter a String").toLowerCase();
+
+    while (str) {             //run until string is empty
+        let ch = str[0];      //take 1st charecter in every new string
+        let newStr = str.replaceAll(ch, "");    //remove charecters
+        console.log(ch + " = " + (str.length - newStr.length)); //print
+        str = newStr;         //store new string to old string
+    }
+</script>

@@ -1,0 +1,561 @@
+<script>
+    let input = prompt("enter name").toUpperCase();
+    let height = +prompt("enter size");
+    let char = prompt("enter char");
+
+    let width = 2 * height - 1;
+    let pattern = '';
+
+    function printA() {
+        let n = Math.trunc(width / 2);
+        for (let row = 0; row < height; row++) {
+            for (let col = 0; col <= width; col++) {
+                if (col == n || col == (width - n) || (row == Math.trunc(height / 2) && col > n && col < (width - n))) {
+                    pattern += char;;
+                }
+                else
+                    pattern += " ";
+            }
+            pattern += '\n';
+            n--;
+        }
+        console.log(pattern);
+        pattern = '';
+    }
+
+    function printB() {
+        let half = Math.trunc(height / 2);
+        for (let row = 0; row < height; row++) {
+            pattern += char;
+            for (let col = 0; col < width; col++) {
+                if ((row == 0 || row == height - 1 || row == half) && col < (width - 2)) {
+                    pattern += char;
+                }
+                else if (col == (width - 2) && !(row == 0 || row == height - 1 || row == half)) {
+                    pattern += char;
+                } else {
+                    pattern += " ";
+                }
+            }
+            pattern += '\n';
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    function printC() {
+        for (let i = 0; i < height; i++) {
+            pattern += char;;
+            for (let j = 0; j < (height - 1); j++) {
+                if (i == 0 || i == height - 1)
+                    pattern += char;
+                else
+                    continue;
+            }
+            pattern += '\n';
+        }
+        console.log(pattern);
+        pattern = '';
+    }
+
+    // Function to print the pattern of 'D'
+    function printD() {
+        for (let i = 0; i < height; i++) {
+            pattern += char;
+            for (let j = 0; j < height; j++) {
+                if ((i == 0 || i == height - 1) && j < height - 1)
+                    pattern += char;
+                else if (j == height - 1 && i != 0 && i != height - 1)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'E'
+    function printE() {
+        for (let i = 0; i < height; i++) {
+            pattern += char;
+            for (let j = 0; j < height; j++) {
+                if ((i == 0 || i == height - 1) || (i == Math.trunc(height / 2) && j <= Math.trunc(height / 2)))
+                    pattern += char;
+                else
+                    continue;
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'F'
+    function printF() {
+        for (let i = 0; i < height; i++) {
+            pattern += char;
+            for (let j = 0; j < height; j++) {
+                if ((i == 0) || (i == Math.trunc(height / 2) && j <= Math.trunc(height / 2)))
+                    pattern += char;
+                else
+                    continue;
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'G'
+    function printG() {
+        width--;
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j < width; j++) {
+                if ((i == 0 || i == height - 1) && (j == 0 || j == width - 1))
+                    pattern += " ";
+                else if (j == 0)
+                    pattern += char;
+                else if (i == 0 && j <= height)
+                    pattern += char;
+                else if (i == Math.trunc(height / 2) && j > Math.trunc(height / 2))
+                    pattern += char;
+                else if (i > Math.trunc(height / 2) && j == width - 1)
+                    pattern += char;
+                else if (i == height - 1 && j < width)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'H'
+    function printH() {
+        for (let i = 0; i < height; i++) {
+            pattern += char;
+            for (let j = 0; j < height; j++) {
+                if ((j == height - 1) || (i == Math.trunc(height / 2)))
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'I'
+    function printI() {
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j < height; j++) {
+                if (i == 0 || i == height - 1)
+                    pattern += char;
+                else if (j == Math.trunc(height / 2))
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'J'
+    function printJ() {
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j < height; j++) {
+                if (i == height - 1 && (j > 0 && j < height - 1))
+                    pattern += char;
+                else if ((j == height - 1 && i != height - 1) || (i > Math.trunc(height / 2) - 1 && j == 0 && i != height - 1))
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'K'
+    function printK() {
+        let half = Math.trunc(height / 2);
+        let temp = half;
+        for (let i = 0; i < height; i++) {
+            pattern += char;
+            for (let j = 0; j <= half; j++) {
+                if (j == abs(temp))
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+            temp--;
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'L'
+    function printL() {
+        for (let i = 0; i < height; i++) {
+            pattern += char;
+            for (let j = 0; j <= height; j++) {
+                if (i == height - 1)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'M'
+    function printM() {
+        let counter = 0;
+        for (let i = 0; i < height; i++) {
+            pattern += char;
+            for (let j = 0; j <= height; j++) {
+                if (j == height)
+                    pattern += char;
+                else if (j == counter
+                    || j == height - counter - 1)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            if (counter == Math.trunc(height / 2)) {
+                counter = -99999;
+            }
+            else
+                counter++;
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'N'
+    function printN() {
+        let counter = 0;
+        for (let i = 0; i < height; i++) {
+            pattern += char;
+            for (let j = 0; j <= height; j++) {
+                if (j == height)
+                    pattern += char;
+                else if (j == counter)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            counter++;
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'O'
+    function printO() {
+
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'P'
+    function printP() {
+        for (let i = 0; i < height; i++) {
+            pattern += char;
+            for (let j = 0; j < height; j++) {
+                if ((i == 0 || i == Math.trunc(height / 2)) && j < height - 1)
+                    pattern += char;
+                else if (i < Math.trunc(height / 2) && j == height - 1 && i != 0)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'Q'
+    function printQ() {
+        printO();
+        let d = height;
+        for (let i = 0; i < Math.trunc(height / 2); i++) {
+            for (let j = 0; j <= d; j++) {
+                if (j == d)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+            d++;
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'R'
+    function printR() {
+        let half = Math.trunc(height / 2);
+        for (let i = 0; i < height; i++) {
+            pattern += char;
+            for (let j = 0; j < width; j++) {
+                if ((i == 0 || i == half) && j < (width - 2))
+                    pattern += char;
+                else if (j == (width - 2) && !(i == 0 || i == half))
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'S'
+    function printS() {
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j < height; j++) {
+                if ((i == 0 || i == Math.trunc(height / 2) || i == height - 1))
+                    pattern += char;
+                else if (i < Math.trunc(height / 2) && j == 0)
+                    pattern += char;
+                else if (i > Math.trunc(height / 2) && j == height - 1)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'T'
+    function printT() {
+        for (i = 0; i < height; i++) {
+            for (j = 0; j < height; j++) {
+                if (i == 0)
+                    pattern += char;
+                else if (j == Math.trunc(height / 2))
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'U'
+    function printU() {
+        let i, j;
+        for (i = 0; i < height; i++) {
+            if (i != 0 && i != height - 1)
+                pattern += char;
+            else
+                pattern += " ";
+            for (j = 0; j < height; j++) {
+                if (((i == height - 1) && j >= 0 && j < height - 1))
+                    pattern += char;
+                else if (j == height - 1 && i != 0 && i != height - 1)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'V'
+    function printV() {
+        let i, j, counter = 0;
+        for (i = 0; i < height; i++) {
+            for (j = 0; j <= width; j++) {
+                if (j == counter || j == width - counter - 1)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            counter++;
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'W'
+    function printW() {
+        let i, j, counter = Math.trunc(height / 2);
+        for (i = 0; i < height; i++) {
+            pattern += char;
+            for (j = 0; j <= height; j++) {
+                if (j == height)
+                    pattern += char;
+                else if ((i >= Math.trunc(height / 2)) && (j == counter || j == height - counter - 1))
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            if (i >= Math.trunc(height / 2)) {
+                counter++;
+            }
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'X'
+    function printX() {
+        let i, j, counter = 0;
+        for (i = 0; i <= height; i++) {
+            for (j = 0; j <= height; j++) {
+                if (j == counter || j == height - counter)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            counter++;
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'Y'
+    function printY() {
+        let i, j, counter = 0;
+        for (i = 0; i < height; i++) {
+            for (j = 0; j <= height; j++) {
+                if (j == counter || j == height - counter && i <= Math.trunc(height / 2))
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            pattern += "\n"
+            if (i < Math.trunc(height / 2))
+                counter++;
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    // Function to print the pattern of 'Z'
+    function printZ() {
+        let i, j, counter = height - 1;
+        for (i = 0; i < height; i++) {
+            for (j = 0; j < height; j++) {
+                if (i == 0 || i == height - 1 || j == counter)
+                    pattern += char;
+                else
+                    pattern += " ";
+            }
+            counter--;
+            pattern += "\n"
+        }
+        console.log(pattern);
+        pattern = "";
+    }
+
+    for (let i = 0; i < input.length; i++) {
+        switch (input[i]) {
+            case 'A':
+                printA();
+                break;
+            case 'B':
+                printB();
+                break;
+            case 'C':
+                printC();
+                break;
+            case 'D':
+                printD();
+                break;
+            case 'E':
+                printE();
+                break;
+            case 'F':
+                printF();
+                break;
+            case 'G':
+                printG();
+                break;
+            case 'H':
+                printH();
+                break;
+            case 'I':
+                printI();
+                break;
+            case 'J':
+                printJ();
+                break;
+            case 'K':
+                printK();
+                break;
+            case 'L':
+                printL();
+                break;
+            case 'M':
+                printM();
+                break;
+            case 'N':
+                printN();
+                break;
+            case 'O':
+                printO();
+                break;
+            case 'P':
+                printP();
+                break;
+            case 'Q':
+                printQ();
+                break;
+            case 'R':
+                printR();
+                break;
+            case 'S':
+                printS();
+                break;
+            case 'T':
+                printT();
+                break;
+            case 'U':
+                printU();
+                break;
+            case 'V':
+                printV();
+                break;
+            case 'W':
+                printW();
+                break;
+            case 'X':
+                printX();
+                break;
+            case 'Y':
+                printY();
+                break;
+            case 'Z':
+                printZ();
+                break;
+        }
+    }
+
+</script>

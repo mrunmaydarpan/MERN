@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+        *
+       * *
+      *   *
+     *     *
+    *********
+-->
+
+<head>
+    <title>13 pattern</title>
+</head>
+
+<body>
+    <script>
+        let length = +prompt("enter length:");
+        let pattern = "";
+
+        for (let row = 1; row <= length; row++) {
+            for (let col = 1; col <= length + row - 1; col++) {
+                pattern += (row == length || col == length - row + 1 || col == length + row - 1) ? "*" : " ";
+            }
+            pattern += '\n';
+        }
+        console.log(pattern);
+    </script>
+</body>
+
+</html>

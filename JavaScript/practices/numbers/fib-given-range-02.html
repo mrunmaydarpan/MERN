@@ -1,0 +1,19 @@
+<script>
+    let start = +prompt("enter lowwer range");
+    let end = +prompt("enter upper range");
+
+    function fibRange(fStart, fEnd) {
+        let a = 0, b = 1, str = '';
+
+        while (a < fEnd) {
+            let c = a + b;
+            if (a > fStart) {
+                str += a + " ";
+            }
+            a = b;
+            b = c;
+        }
+        return str;
+    }
+    console.log(fibRange(start, end));
+</script>

@@ -13,7 +13,7 @@
 
         while (bin > 0) {
             let rem = bin % 10;
-            num = num + (rem * Math.pow(2, p++));
+            num += rem * Math.pow(2, p++);
             bin = Math.trunc(bin / 10);
         }
         window.alert(num);

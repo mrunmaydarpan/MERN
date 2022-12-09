@@ -1,0 +1,14 @@
+<script>
+    let start = +prompt("enter lowwer range");
+    let end = +prompt("enter upper range");
+    let a = 0, b = 1;
+
+    while (a < end) {
+        let c = a + b;
+        if (a > start) {
+            console.log(a);
+        }
+        a = b;
+        b = c;
+    }
+</script>

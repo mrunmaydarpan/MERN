@@ -18,12 +18,12 @@
             let start = +prompt("enter n (lowwer limit) range:");
             let end = +prompt("enter n (Upper limit) range:");
 
-            for (; ;) {
+            while (true) {
                 let c = a + b;
                 a = b;
                 b = c;
                 if (a > end) {
-                    return;
+                    break;
                 }
                 if (a >= start) {
                     if (steps == 0) {
@@ -34,7 +34,7 @@
                     }
                 }
             }
-        };
+        }
         fib();
         document.write(str);
     </script>

@@ -1,0 +1,18 @@
+<script>
+    let str = prompt("enter a String").toLowerCase();
+    let count = 0;
+    let output = "";
+
+    for (let i = 97; i <= 122; i++) {
+        count = 0;
+        for (index = 0; index < str.length; index++) {
+            if (i === str.charCodeAt(index)) {
+                count++;
+            }
+        }
+        if (count != 0) {
+            output += String.fromCharCode(i) + " = " + count + "\n";
+        }
+    }
+    console.log(output);
+</script>

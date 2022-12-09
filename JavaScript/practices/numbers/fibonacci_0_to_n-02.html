@@ -1,0 +1,16 @@
+<script>
+    let n = +prompt("enter upper range");
+    let str = '';
+    let a = 0, b = 1;
+
+    function fib(num) {
+        while (a <= n) {
+            let c = a + b;
+            str += a + " ";
+            a = b;
+            b = c;
+        }
+        return str;
+    }
+    console.log(fib(str));
+</script>

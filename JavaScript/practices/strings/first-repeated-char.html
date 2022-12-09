@@ -1,0 +1,16 @@
+<script>
+    let str = prompt("enter string").toLowerCase();
+    for (let i = 0; i < str.length; i++) {
+        let flag = false;
+        for (let j = i + 1; j < str.length; j++) {
+            if (str[i] == str[j]) {
+                console.log(str[i]);
+                flag = true;
+                break;
+            }
+        }
+        if (flag = true) {
+            break;
+        }
+    }
+</script>

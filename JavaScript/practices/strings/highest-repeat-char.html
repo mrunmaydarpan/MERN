@@ -1,0 +1,17 @@
+<script>
+    let str = prompt("enter a string");
+    let count = 0;
+    let maxChar = '';
+
+    while (str) {
+        let ch = str[0];
+        let newStr = str.replaceAll(ch, "");
+        let count2 = str.length - newStr.length;
+        if (count2 > count) {
+            maxChar = ch;
+            count = str.length - newStr.length;
+        }
+        str = newStr;
+    }
+    console.log(maxChar);
+</script>

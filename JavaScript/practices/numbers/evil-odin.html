@@ -8,13 +8,10 @@
 <body>
     <script>
         let num = +prompt("enter a number");
-        let bin = 0;
-        let p = 0;
         let count = 0;
 
         while (num > 0) {
             let rem = num % 2;
-            bin += rem * Math.pow(10, p++);
             num = Math.trunc(num / 2);
             if (rem == 1) {
                 count++;
