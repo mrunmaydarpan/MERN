@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let num = +prompt("enter a number");
+    let sums = 0;
 
-<head>
-    <title>magic number</title>
-</head>
-
-<body>
-    <script>
-        let num = +prompt("enter a number");
-        let sums = 0;
-
-        while (num > 0 || sums > 9) {
-            if (num == 0) {
-                num = sums; 
-                sums = 0;
-            }
-            sums += num % 10;
-            num = Math.trunc(num / 10);
+    while (num > 0 || sums > 9) {
+        if (num == 0) {
+            num = sums;
+            sums = 0;
         }
-        console.log(sums);
-        if (sums == 1) {
-            window.alert("is a magic number");
-        } else {
-            window.alert("is not a magic number");
-        }
-    </script>
-</body>
-
-</html>
+        sums += num % 10;
+        num = Math.trunc(num / 10);
+    }
+    console.log(sums);
+    if (sums == 1) {
+        window.alert("is a magic number");
+    } else {
+        window.alert("is not a magic number");
+    } 
+</script>

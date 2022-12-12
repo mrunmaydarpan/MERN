@@ -1,29 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let num = +prompt("enter a number");
+    let tempNum = num;
+    let sums = 0;
+    let mult = 1;
 
-<head>
-    <title>Spy number</title>
-</head>
-
-<body>
-    <script>
-        let num = +prompt("enter a number");
-        let tempNum = num;
-        let sums = 0;
-        let mult = 1;
-
-        while (num) {
-            let rem = num % 10;
-            mult *= rem;
-            sums += rem;
-            num = Math.trunc(num / 10);
-        }
-        if (sums === mult) {
-            window.alert("is a spy number");
-        } else {
-            window.alert("not a spy number"); F
-        }
-    </script>
-</body>
-
-</html>
+    while (num) {
+        let rem = num % 10;
+        mult *= rem;
+        sums += rem;
+        num = Math.trunc(num / 10);
+    }
+    if (sums === mult) {
+        window.alert("is a spy number");
+    } else {
+        window.alert("not a spy number"); F
+    }
+</script>

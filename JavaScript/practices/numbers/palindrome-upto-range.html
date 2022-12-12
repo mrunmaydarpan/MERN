@@ -1,0 +1,19 @@
+<script>
+    let n = +prompt("enter upper range");
+    let str = "";
+
+    for (let i = 1; i < n; i++) {
+        temp = i;
+        let rev = 0;
+        while (temp > 0) {
+            let r = temp % 10;
+            rev = rev * 10 + r;
+            temp = Math.trunc(temp / 10);
+        }
+        if (rev === i) {
+            str += i + " ";
+        }
+    }
+    console.log(str);
+
+</script>

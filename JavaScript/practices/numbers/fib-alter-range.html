@@ -1,0 +1,19 @@
+<script>
+    let start = +prompt("enter lower limit");
+    let end = +prompt("enter upper range");
+    let a = 0, b = 1;
+    let str = '';
+    let count = 0;
+
+    while (a < end) {
+        let c = a + b;
+        if (a >= start) {
+            if (count++ % 2 == 0) {
+                str += a + " ";
+            }
+        }
+        a = b;
+        b = c;
+    }
+    console.log(str);
+</script>

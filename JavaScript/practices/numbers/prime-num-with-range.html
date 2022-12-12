@@ -1,31 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let start = +prompt("enter lower limit number");
+    let end = +prompt("enter upper limit number");
+    let str = "";
 
-<head>
-    <title>prime numbers display</title>
-</head>
-
-<body>
-    <script>
-        let start = +prompt("enter lower limit number");
-        let end = +prompt("enter upper limit number");
-        let str = "";
-
-        if (end > start) {
-            for (let i = start; i <= end; i++) {
-                let count = 0;
-                for (let j = 1; j <= i; j++) {
-                    if (i % j == 0)
-                        count++;
-                }
-                if (count == 2)
-                    str += i + " ";
-            }
-            window.alert(str);
-        } else {
-            window.alert("wrong input");
+    for (let i = start; i <= end; i++) {
+        let count = 0;
+        for (let j = 1; j <= i; j++) {
+            if (i % j == 0)
+                count++;
         }
-    </script>
-</body>
-
-</html>
+        if (count == 2)
+            str += i + " ";
+    }
+    window.alert(str);
+</script>

@@ -1,0 +1,34 @@
+<script>
+    let n = +prompt("enter a number");
+    let rev = 0;
+    let temp = n;
+    let flag = false;
+
+    while (true) {
+
+        while (n > 0) {
+            let r = n % 10;
+            rev = rev * 10 + r;
+            n = Math.trunc(n / 10);
+        }
+        n == temp;
+        if (temp === rev) {
+            let count = n;
+            let rev = 0;
+            while (flag == false) {
+                count++;
+                while (count > 0) {
+                    let r = count % 10;
+                    rev = rev * 10 + r;
+                    count = Math.trunc(count / 10);
+                }
+                if (rev === count) {
+                    console.log(count);
+                    flag = true;
+                    break;
+                }
+            }
+        }
+        if (flag == true) break;
+    }
+</script>

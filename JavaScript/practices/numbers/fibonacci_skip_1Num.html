@@ -1,43 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let start = +prompt("enter n (lowwer limit) range:");
+    let end = +prompt("enter n (Upper limit) range:");
+    let str = '';
+    let a = 0, b = 1;
+    let steps = 0;
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fibonacci series</title>
-</head>
-
-<body>
-    <script>
-        let str = '';
-        function fib() {
-            let a = 0
-            let b = 1
-            let steps = 0;
-            let start = +prompt("enter n (lowwer limit) range:");
-            let end = +prompt("enter n (Upper limit) range:");
-
-            while (true) {
-                let c = a + b;
-                a = b;
-                b = c;
-                if (a > end) {
-                    break;
-                }
-                if (a >= start) {
-                    if (steps == 0) {
-                        str += a + " ";
-                        steps = 1; //skip one step
-                    } else {
-                        steps--;
-                    }
-                }
+    while (a < end) {
+        let c = a + b;
+        if (a >= start) {
+            if (steps == 0) {
+                str += a + " ";
+                steps = 1; //skip one step
+            } else {
+                steps--;
             }
         }
-        fib();
-        document.write(str);
-    </script>
-</body>
+        a = b;
+        b = c;
+    }
 
-</html>
+    window.alert(str);
+</script>
