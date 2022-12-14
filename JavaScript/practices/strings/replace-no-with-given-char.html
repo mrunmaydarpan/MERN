@@ -1,0 +1,14 @@
+<script>
+    let str = prompt("enter String");
+    let char = prompt("enter char");
+    let output = "";
+    let j = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (isNaN(str[i])) {
+            output += str[i];
+        } else {
+            output += char[j++];
+        }
+    }
+    console.log(output);
+</script>

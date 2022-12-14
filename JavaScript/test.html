@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let str_1 = prompt("enter string 1");
+    let str_2 = prompt("enter string 2");
+    let output = "";
 
-<head>
-    <title>test</title>
-</head>
-
-<body>
-    <script>
-        let str = "123";
-        let bool = true;
-        console.log(str + bool);
-    </script>
-</body>
-
-</html>
+    while (str_1 || str_2) {
+        let char_1 = str_1[0];
+        let char_2 = str_2[0];
+        output += (str_1 != "" ? char_1 : str_1) + (str_2 != "" ? char_2 : str_2);
+        str_1 = str_1.replace(char_1, "");
+        str_2 = str_2.replace(char_2, "");
+    }
+    alert(output);
+</script>

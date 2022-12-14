@@ -1,13 +1,12 @@
 <script>
     let str = prompt("enter a String");
-    console.log("entered String: " + str);
+
     while (str) {
         let char = str.charAt(0);
         let newStr = str.replaceAll(char, "");
-        if (str.length - newStr.length > 1) {
+        if (str.length - newStr.length > 1 && char != " ") {
             console.log(char);
         }
         str = newStr;
     }
-
-</script>
+</script> 

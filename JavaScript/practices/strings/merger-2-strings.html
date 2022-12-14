@@ -1,0 +1,11 @@
+<script>
+    let str_1 = prompt("enter string 1");
+    let str_2 = prompt("enter string 2");
+    let output = "";
+
+    for (let i = 0; i < Math.max(str_1.length, str_2.length); i++) {
+        if (str_1[i]) output += str_1[i];
+        if (str_2[i]) output += str_2[i];
+    }
+    alert(output);
+</script>

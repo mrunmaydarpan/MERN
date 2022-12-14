@@ -1,0 +1,11 @@
+<script>
+    let str_1 = prompt("enter 1st string");
+    let str_2 = prompt("enter 2nd string");
+
+    while (str_1 && str_2 && str_1.length === str_2.length) {
+        let char = str_1.charAt(0);
+        str_1 = str_1.replaceAll(char, "");
+        str_2 = str_2.replaceAll(char, "");
+    }
+    alert(str_1 === str_2 ? "anagram" : "not a anagram");
+</script>

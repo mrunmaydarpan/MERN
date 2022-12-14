@@ -1,0 +1,12 @@
+<script>
+    let str = prompt("enter a string");
+    let output = "";
+    while (str) {
+        char = str.charAt(0);
+        if (str.indexOf(char) != str.lastIndexOf(char)) {
+            output += char + " ";
+        }
+        str = str.replaceAll(char, "");
+    }
+    console.log("result: " + output);
+</script> 
