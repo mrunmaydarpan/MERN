@@ -1,0 +1,12 @@
+<script>
+    let str = prompt("enter a string");
+    let len = str.length;
+    output = '';
+
+    while (str) {
+        output += str.slice(str.lastIndexOf(" ") + 1) + " ";
+        str = str.replace(str.slice(str.lastIndexOf(" ")), "");
+        if (output.length >= len) break;
+    }
+    alert(output);
+</script>

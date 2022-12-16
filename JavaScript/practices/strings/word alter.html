@@ -1,0 +1,15 @@
+<script>
+    let str = prompt("enter a string"); //practice makes man perfect
+    let output = '';                    //perfect man makes practice
+    let word = "";
+
+    for (let i = 0; i <= str.length; i++) {
+        if (str[i] == " " || i == str.length) {
+            output = " " + word + output;
+            word = '';
+        } else {
+            word += str[i];
+        }
+    }
+    alert(output);
+</script>

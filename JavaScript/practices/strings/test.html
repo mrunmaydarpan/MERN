@@ -1,0 +1,16 @@
+<script>
+    let l = 5;
+    let p = "";
+
+    for (let r = 1; r <= l; r++) {
+        for (let c = 1; c <= l; c++) {
+            if (c < r) {
+                p += " ";
+            } else {
+                p += "*";
+            }
+        }
+        p += '\n';
+    }
+    console.log(p);
+</script>

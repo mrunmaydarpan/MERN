@@ -4,11 +4,12 @@
     let output = "";
     let j = 0;
     for (let i = 0; i < str.length; i++) {
-        if (isNaN(str[i])) {
+        if (isNaN(str[i]) || str[i] == " ") {
             output += str[i];
         } else {
             output += char[j++];
         }
+        // console.log("str-i: " + str[i] + " isNan? " + isNaN(str[i]));
     }
     console.log(output);
 </script>
