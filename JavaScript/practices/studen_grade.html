@@ -1,34 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade</title>
-</head>
-
-<body>
-    <script>
-        let mark = +prompt("Enter Mark:");
-        if (mark <= 100) {
-            if (mark > 90) {
-                console.log("Grade: A+");
-            } else if (mark > 80) {
-                console.log("Grade: A");
-            } else if (mark > 60) {
-                console.log("Grade: B+");
-            } else if (mark > 50) {
-                console.log("Grade: B");
-            } else if (mark >= 35) {
-                console.log("Grade: C+");
-            } else {
-                console.log("Grade: C");
-            }
+<script>
+    let mark = +prompt("Enter Mark:");
+    if (mark <= 100) {
+        if (mark > 90) {
+            console.log("Grade: A+");
+        } else if (mark > 80) {
+            console.log("Grade: A");
+        } else if (mark > 60) {
+            console.log("Grade: B+");
+        } else if (mark > 50) {
+            console.log("Grade: B");
+        } else if (mark >= 35) {
+            console.log("Grade: C+");
         } else {
-            console.log("Invalid Mark");
+            console.log("Grade: C");
         }
-    </script>
-</body>
-
-</html>
+    } else {
+        console.log("Invalid Mark");
+    }
+</script>

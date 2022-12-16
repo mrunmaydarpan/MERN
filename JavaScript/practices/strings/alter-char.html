@@ -1,0 +1,15 @@
+<script>
+    let str = prompt("enter a string: ");
+    let output = "";
+    let word = "";
+
+    for (let i = 0; i <= str.length; i++) {
+        if (str[i] === " " || i === str.length) {
+            output += word + " ";
+            word = "";
+        } else {
+            word = str[i] + word;
+        }
+    }
+    alert(output);
+</script>

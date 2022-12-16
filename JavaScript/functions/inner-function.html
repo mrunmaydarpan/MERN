@@ -1,0 +1,11 @@
+<script>
+    function outer() {
+        return function(){
+            console.log("inner funtion");
+            return "hii hello";
+        }
+    }
+
+    let result = outer();
+    console.log(result());
+</script>

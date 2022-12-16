@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <!--
-     *****
-      ****
-       ***
-        **
-         *
+    *****
+     ****
+      ***
+       **
+        *
 -->
 
-<head>
-    <title>07 pattern</title>
-</head>
+<script>
+    let output = "";
+    let n = +prompt("lenght");
 
-<body>
-    <script>
-        let output = "";
-        let n = +prompt("lenght");
-
-        for (let i = n; i >= 1; i--) {
-            for (let j = 0; j < n - i; j++) {
-                output += " ";
-            }
-            for (let k = 1; k <= i; k++) {
-                output += "*";
-            }
-            output += "\n";
+    for (let i = n; i >= 1; i--) {
+        for (let j = 0; j < n - i; j++) {
+            output += " ";
         }
-        console.log(output);
-    </script>
-</body>
-
-</html>
+        for (let k = 1; k <= i; k++) {
+            output += "*";
+        }
+        output += "\n";
+    }
+    console.log(output);
+</script>

@@ -1,0 +1,13 @@
+<script>
+    function majnu(a, b) { //callback function
+        return a + b;
+
+    }
+
+    function laila(a, b, c) {  //higher order function
+        return c(a, b);
+    }
+
+    let shaila = laila(10, 20, majnu);
+    console.log(shaila);
+</script>

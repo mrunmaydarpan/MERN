@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <!--
     *
     **
@@ -13,27 +10,16 @@
     *
 -->
 
-<head>
-    <title>05 pattern</title>
-</head>
+<script>
+    let output = "";
+    let length = +prompt("length");
 
-<body>
-    <script>
-        let output = "";
-        let length = +prompt("length");
-        //tejas sir way
-        function pattern() {
-            for (let row = 1; row <= 2 * length - 1; row++) {
-                let colCond = (row <= length) ? row : 2 * length - row;
-                for (let col = 1; col <= colCond; col++) {
-                    output += "*";
-                }
-                output += '\n';
-            }
-            console.log(output);
+    for (let row = 1; row <= 2 * length - 1; row++) {
+        let colCond = (row <= length) ? row : 2 * length - row;
+        for (let col = 1; col <= colCond; col++) {
+            output += "*";
         }
-        pattern();
-    </script>
-</body>
-
-</html>
+        output += '\n';
+    }
+    console.log(output);
+</script>
