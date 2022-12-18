@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+    12345
+    1234
+    123
+    12
+    1
+-->
 
-<head>
-    <title>unknow</title>
-</head>
-
-<body>
-    <script>
-        let pattern = "";
-        for (let i = 1; i <= 5; i++) {
-            for (let j = i; j > i; j--) {
-                pattern += j;
-            }
-            for (let k = 1; k <= 6 - i; k++) {
-                pattern += k;
-            }
-            pattern += '\n';
+<script>
+    let pattern = "";
+    for (let i = 1; i <= 5; i++) {
+        for (let j = i; j > i; j--) {
+            pattern += j;
         }
-        console.log(pattern);
-    </script>
-</body>
-
-</html>
+        for (let k = 1; k <= 6 - i; k++) {
+            pattern += k;
+        }
+        pattern += '\n';
+    }
+    console.log(pattern);
+</script>
