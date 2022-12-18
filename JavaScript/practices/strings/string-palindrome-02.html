@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let str = prompt("enter a String");
+    let flag = true;
 
-<head>
-    <title>string palindrome</title>
-</head>
-
-<body>
-    <script>
-        let str = prompt("enter a String");
-        let flag = true;
-
-        for (let i = 0; i < str.length; i++) {
-            if (str[i] !== str[Math.trunc(str.length / 2)]) {
-                flag = false;
-                break;
-            }
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== str[Math.trunc(str.length / 2)]) {
+            flag = false;
+            break;
         }
+    }
 
-        if (flag == true) {
-            window.alert("string is palindrome");
-        } else {
-            window.alert("not a palindrome string");
-        }
-    </script>
-</body>
-
-</html>
+    if (flag == true) {
+        window.alert("string is palindrome");
+    } else {
+        window.alert("not a palindrome string");
+    }
+</script>

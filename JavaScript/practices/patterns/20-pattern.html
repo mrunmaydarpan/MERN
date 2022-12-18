@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+    *****
+    *   *
+    *   *
+    *   *
+    *****
+-->
 
-<head>
-    <title>20 pattern</title>
-</head>
+<script>
+    let pattern = '';
+    let length = 5;
 
-<body>
-    <script>
-        let pattern = '';
-        let length = 5;
-        for (let row = 1; row <= length; row++) {
-            for (let col = 1; col <= length; col++) {
-                pattern += (row == 1 || col == 1 || row == length || col == length) ? "*" : " ";
-            }
-            pattern += '\n';
+    for (let row = 1; row <= length; row++) {
+        for (let col = 1; col <= length; col++) {
+            pattern += (row == 1 || col == 1 || row == length || col == length) ? "*" : " ";
         }
-        console.log(pattern);
-    </script>
-</body>
-
-</html>
+        pattern += '\n';
+    }
+    console.log(pattern);
+</script>

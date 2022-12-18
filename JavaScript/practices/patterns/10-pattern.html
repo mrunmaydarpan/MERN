@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <!--
         * 
        * * 
@@ -9,25 +6,15 @@
     * * * * * 
 -->
 
-<head>
-    <title>10 pattern</title>
-</head>
-
-<body>
-    <script>
-        //tejas sir logic
-        function p2() {
-            for (let row = 1; row <= length; row++) {
-                for (let col = 1; col <= length + row - 1; col++) {
-                    pattern += (col <= length - row) ? " " : (col % 2 == row % 2) ? "*" : " ";
-                }
-                pattern += '\n';
-            }
-            console.log(pattern);
+<script>
+    let length = 5;
+    let pattern = '';
+    
+    for (let row = 1; row <= length; row++) {
+        for (let col = 1; col <= length + row - 1; col++) {
+            pattern += (col <= length - row) ? " " : (col % 2 == row % 2) ? "*" : " ";
         }
-        p2();
-        // p1();
-    </script>
-</body>
-
-</html>
+        pattern += '\n';
+    }
+    console.log(pattern);
+</script>

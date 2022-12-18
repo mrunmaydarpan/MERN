@@ -2,20 +2,16 @@
     let str = prompt("enter String:").toLowerCase();
     let flag = false;
 
-    function checkPanagram() {
-        for (let j = 97; j <= 122; j++) {
-            flag = false;
-            for (let i = 0; i < str.length; i++) {
-                if (str.charCodeAt(i) == j) {
-                    flag = true;
-                    continue;
-                }
-            }
-            if (flag == false) {
-                return;
+    for (let j = 97; j <= 122; j++) {
+        flag = false;
+        for (let i = 0; i < str.length; i++) {
+            if (str.charCodeAt(i) == j) {
+                flag = true;
             }
         }
+        if (flag == false) {
+            break;
+        }
     }
-    checkPanagram();
-    window.alert(flag ? "panagram String" : "not a panagram String");
+    alert(flag ? "panagram String" : "not a panagram String");
 </script>

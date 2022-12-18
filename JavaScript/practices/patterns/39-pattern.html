@@ -1,34 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <!--
-    4444444
-    4333334
-    4322234
-    4321234
-    4322234
-    4333334
-    4444444
+    12345
+    1234
+    123
+    12
+    1
 -->
 
-<head>
-    <title>39 pattern</title>
-</head>
+<script>
+    let pattern = "";
+    let l = 5;
 
-<body>
-    <script>
-        let input = +prompt("enter a number");
-        let pattern = "";
-
-        for (let row = 1; row < 2 * input; row++) {
-            for (let col = 1; col < 2 * input; col++) {
-                pattern += Math.max(input - row + 1, input - col + 1, col - input + 1, row - input + 1);
-            }
-            pattern += '\n';
+    for (let row = l; row >= 1; row--) {
+        for (let col = 1; col <= row; col++) {
+            pattern += col;
         }
-        console.log(pattern);
-
-    </script>
-</body>
-
-</html>
+        pattern += '\n';
+    }
+    console.log(pattern);
+</script>

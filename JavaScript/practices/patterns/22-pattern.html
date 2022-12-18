@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <!--
     1
     0 1
@@ -7,22 +5,13 @@
     0 1 0 1
     1 0 1 0 1
 -->
-
-<head>
-    <title>22 pattern</title>
-</head>
-
-<body>
-    <script>
-        let pattern = "";
-        for (let row = 1; row <= 5; row++) {
-            for (let col = 1; col <= row; col++) {
-                pattern += (row % 2 == col % 2) ? 1 : 0;
-            }
-            pattern += '\n';
+<script>
+    let pattern = "";
+    for (let row = 1; row <= 5; row++) {
+        for (let col = 1; col <= row; col++) {
+            pattern += (row % 2 == col % 2) ? 1 : 0;
         }
-        console.log(pattern);
-    </script>
-</body>
-
-</html>
+        pattern += '\n';
+    }
+    console.log(pattern);
+</script>
