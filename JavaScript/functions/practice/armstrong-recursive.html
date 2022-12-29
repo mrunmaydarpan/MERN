@@ -1,0 +1,9 @@
+<script>
+    let num = +prompt("enter a Number");
+
+    function checkArm(n, p) {
+        if (n == 0) return 0;
+        return Math.pow(n % 10, p) + checkArm(Math.trunc(n / 10), p);
+    }
+    alert(num == checkArm(num, String(num).length) ? "armstrong" : "not an armstrong"); 
+</script>

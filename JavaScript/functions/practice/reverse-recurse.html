@@ -1,0 +1,11 @@
+<script>
+    let num = +prompt("enter a number");
+
+    function rev(n) {
+        if (n < 10) return n;
+
+        let reverse = rev(Math.trunc(n / 10));
+        return n % 10 * Math.pow(10, (reverse + "").length) + reverse;
+    }
+    alert(rev(num));
+</script>

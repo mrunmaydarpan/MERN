@@ -1,0 +1,34 @@
+<script>
+    let car = new Object();
+    car.name = "800";
+    car.price = 100000;
+    car.company = "maruti";
+
+    console.log(car.price);
+    console.log(car['company']);
+    let result = "name";
+    console.log(car[result]);
+    console.log(car.model); //undefined
+
+    car.price = 120000; //modified property
+    console.log(car.price);
+    console.log(car); //data with updated price
+
+    //create new property
+    let c = prompt("enter");
+    car.model = "petrol";
+    car[c] = "black";
+    console.log(car); //new property added
+
+    //delete object property
+
+    delete car.color;
+    console.log(car);
+
+    //function expression
+
+    car.func = function () {
+        console.log(this);
+    }
+    car.func();
+</script>

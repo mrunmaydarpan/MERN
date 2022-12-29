@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let num = +prompt("enter number");
+    let temp = num;
+    let count = 0;
+    let arm = 0;
 
-<head>
-    <title>armstrong number</title>
-</head>
-
-<body>
-    <script>
-        let num = +prompt("enter number");
-        let temp = num;
-        let count = 0;
-        let arm = 0;
-
-        while (num > 0) {
-            num = Math.trunc(num / 10);
-            count++;
-        }
-        num = temp;8
-        while (num > 0) {
-            let r = num % 10;
-            arm += Math.pow(r, count);
-            num = Math.trunc(num / 10);
-        }
-        if (arm === temp) {
-            window.alert("an armstrong number");
-        } else {
-            window.alert("not an armstrong number");
-        }
-    </script>
-</body>
-
-</html>
+    while (num > 0) {
+        num = Math.trunc(num / 10);
+        count++;
+    }
+    num = temp;
+    while (num > 0) {
+        let r = num % 10;
+        arm += Math.pow(r, count);
+        num = Math.trunc(num / 10);
+    }
+    if (arm === temp) {
+        window.alert("an armstrong number");
+    } else {
+        window.alert("not an armstrong number");
+    }
+</script>

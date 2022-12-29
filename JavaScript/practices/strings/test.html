@@ -1,16 +1,20 @@
 <script>
-    let l = 5;
-    let p = "";
+    let str = prompt("enter a string");
+    let ch = "", count = 0;
 
-    for (let r = 1; r <= l; r++) {
-        for (let c = 1; c <= l; c++) {
-            if (c < r) {
-                p += " ";
-            } else {
-                p += "*";
+    let newStr = function (string, char) {
+        for (let i = 0; i < string.length; i++) {
+            if (string[i] != ch) {
+                let str1 = string[i];
             }
         }
-        p += '\n';
+        return str1;
     }
-    console.log(p);
+
+    while (str) {
+        ch = str[0];
+        str = newStr(str, ch);
+        console.log(str.length - newStr.length);
+    }
+
 </script>
