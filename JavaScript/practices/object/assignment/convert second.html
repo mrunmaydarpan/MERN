@@ -1,0 +1,19 @@
+<script>
+    let input = +prompt("enter second");
+
+    function convert(totalSeconds) {
+        let totalMinutes = Math.trunc(totalSeconds / 60);
+
+        let seconds = totalSeconds % 60;
+        let hours = Math.trunc(totalMinutes / 60);
+        let minutes = totalMinutes % 60;
+
+        return {
+            h: hours,
+            m: minutes,
+            s: seconds
+        };
+    }
+
+    console.log(convert(input).h + "hrs " + convert(input).m + "min " + convert(input).s + "sec");
+</script>

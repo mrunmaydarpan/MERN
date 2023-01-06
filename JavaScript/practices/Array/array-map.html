@@ -1,0 +1,8 @@
+<script>
+    let str = "10,20,30,40,50";
+    let arr = str.split(",");
+    let newArr = arr.map((element, index, array) => {
+        return Number(element);
+    });
+    console.log(newArr);
+</script>

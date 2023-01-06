@@ -1,0 +1,26 @@
+<!--  NOTE:-
+    when the array is sorted , we will use binary search.
+    when the array is not sorted , we use linear search method
+-->
+
+
+<script>
+    let arr = [1, 2, 4, 8, 13, 17, 21, 34, 39, 50];
+    let elem = 8;
+    function findIndex(arr, elem) {
+        let start = 0;            //initiate start index is 0.
+        let end = arr.length - 1;
+        while (start <= end) {
+            let mid = Math.trunc((start + end) / 2);    //find mid index of array
+            if (arr[mid] === elem) return mid;          //if mid index element is equal to given element or not
+            else if (arr[mid] < elem) start = mid + 1;
+            else end = mid - 1;
+        }
+        return -1;
+    }
+    console.log(findIndex(arr, elem));
+
+    /*            or   inbulit method             */
+
+    console.log(arr.indexOf(elem));
+</script>

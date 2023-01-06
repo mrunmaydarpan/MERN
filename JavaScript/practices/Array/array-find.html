@@ -1,0 +1,12 @@
+<script>
+    let arr = [3, 4, 8, 13, 19, 20, 21, 25, 30];
+    let res = arr.find((elem) => {
+        if (elem % 5 == 0)
+            return true;
+        else
+            return false;
+    })
+    console.log(res);
+    //or
+    console.log(arr.find(elem => !(elem % 5)));
+</script>

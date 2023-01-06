@@ -1,0 +1,46 @@
+<script>
+    let str = prompt("enter roman number:").toUpperCase();
+
+    function value(x) {
+        switch (x) {
+            case 'I':
+                return 1;
+            case 'V':
+                return 5;
+            case 'X':
+                return 10;
+            case 'L':
+                return 50;
+            case 'C':
+                return 100;
+            case 'D':
+                return 500;
+            case 'M':
+                return 1000;
+        }
+    }
+
+    function romanToInt(str) {
+        let result = 0;
+
+        for (i = 0; i < str.length; i++) {
+            let char_1 = value(str[i]);
+
+            if (i + 1 < str.length) {
+                let char_2 = value(str[i + 1]);
+
+                if (char_1 >= char_2) {
+                    result = result + char_1;
+                } else {
+                    result = result + char_2 - char_1;
+                    i = i + 1;
+                }
+            }
+            else {
+                result += char_1;
+            }
+        }
+        return result;
+    }
+    alert(str + " = " + romanToInt(str));
+</script>

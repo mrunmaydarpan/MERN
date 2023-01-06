@@ -1,0 +1,22 @@
+<script>
+    let student = {
+        name: "pawan",
+        age: 60,
+        gender: "male"
+    }
+    //Object.values
+    let result = Object.values(student); //will return array
+    console.log(result);
+    console.log(Array.isArray(result)); //return true if arry
+
+    //Object.keys
+    console.log(Object.keys(student));
+
+    let student2 = {
+        name1: "keshab",
+        age2: 65,
+        gender3: "female"
+    }
+
+    console.log(Object.assign(student, student2));
+</script>

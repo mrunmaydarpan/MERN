@@ -1,0 +1,149 @@
+<script>
+    let students = [
+        {
+            SNo: 01,
+            Name: "Mrunmay",
+            Gender: "Male",
+            Age: 28,
+            Number: "8599822408",
+            Course: "MERN",
+            Mark: [78, 65, 96, 54, 56, 61]
+        },
+        {
+            SNo: 02,
+            Name: "Keshab",
+            Gender: "Male",
+            Age: 23,
+            Number: "7003548610",
+            Course: "MERN",
+            Mark: [78, 65, 96, 54, 56, 61]
+        },
+        {
+            SNo: 03,
+            Name: "RajSekhar",
+            Gender: "Male",
+            Age: 24,
+            Number: "",
+            Course: "Python",
+            Mark: [78, 65, 95, 54, 56, 29]
+        },
+        {
+            SNo: 04,
+            Name: "SriDhar",
+            Gender: "Male",
+            Age: 21,
+            Number: "9427830576",
+            Course: "AWS",
+            Mark: [78, 49, 96, 54, 25, 81]
+        },
+        {
+            SNo: 05,
+            Name: "Payal",
+            Gender: "Female",
+            Age: 25,
+            Number: "8987034861",
+            Course: "Python",
+            Mark: [78, 65, 96, 54, 56, 61]
+        },
+        {
+            SNo: 06,
+            Name: "Sourav",
+            Gender: "Male",
+            Age: 25,
+            Number: "6049756305",
+            Course: "JAVA",
+            Mark: [78, 65, 96, 54, 56, 84]
+        },
+        {
+            SNo: 07,
+            Name: "kajol",
+            Gender: "Female",
+            Age: 25,
+            Number: "9663150842",
+            Course: "AWS",
+            Mark: [78, 22, 96, 69, 56, 61]
+        },
+        {
+            SNo: 08,
+            Name: "Avinash",
+            Gender: "Male",
+            Age: 24,
+            Number: "",
+            Course: "AWS",
+            Mark: [78, 65, 96, 54, 28, 61]
+        },
+        {
+            SNo: 09,
+            Name: "Neha",
+            Gender: "Female",
+            Age: 25,
+            Number: "7608917605",
+            Course: "AWS",
+            Mark: [78, 72, 96, 54, 56, 61]
+        },
+        {
+            SNo: 10,
+            Name: "Chiku",
+            Gender: "Male",
+            Age: 25,
+            Number: "7009830462",
+            Course: "JAVA",
+            Mark: [99, 65, 96, 30, 56, 61]
+        },
+        {
+            SNo: 11,
+            Name: "Daya",
+            Gender: "Male",
+            Age: 22,
+            Number: "7000014444",
+            Course: "AWS",
+            Mark: [78, 84, 96, 54, 56, 61]
+        },
+    ];
+
+
+    // WAP to list of student names whos age is greater than equals to 25
+    let res = students.filter(elem => {
+        if (elem.Age >= 25) {
+            return true;
+        }
+    });
+    console.log(res);
+    let name = res.map(elem => elem.Name)
+    console.log(name);
+
+    // WAP to make a list of student name who didnt provide phone numbers
+    console.log(students.filter(elem => elem.Number == "").map(elem => elem.Name));
+
+    // WAP to make a list of sudent name whose name is start with A or S
+    console.log(students.filter(elem => elem.Name[0] == "A" || elem.Name[0] == "S").map(elem => elem.Name));
+
+    //WAP to increase student age by 1
+
+    //WAP to decrease mark of index 2 to 20
+
+    // students.forEach(element => {
+    //     element.Mark[2] = element.Mark[2] - 20;
+    // });
+    console.log(students);
+
+    //display failed students
+    console.log(
+        students.filter(student => student.Mark.some(marks => marks < 35))
+    );
+
+    //WAP to find whos percentage is greater than 85%
+    console.log(
+        students.filter((student) => student.Mark.reduce((init, mark) => init + mark, 0) / student.Mark.length > 85)
+    );
+
+    //list of student who scored above 80 in 2 subjects
+    console.log(
+        students.filter(student => student.Mark.reduce((init, elem) => {
+            if (elem > 80) {
+                init++;
+            }
+            return init;
+        }, 0) >= 2)
+    );
+</script>
