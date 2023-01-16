@@ -1,0 +1,36 @@
+<script>
+    let arr = [5, 29, 8, 3, 9, 1, 34, 5, 11];
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        let minIndex = i;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[minIndex] > arr[j]) minIndex = j;
+        }
+        if (minIndex !== 1) {
+            let temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    }
+    console.log(arr);
+
+    //back to front....................................
+
+    let array = [5, 29, 8, 3, 9, 1, 34, 5, 11];
+
+    for (let i = 0; i < array.length - 1; i++) {
+        let max = 0;
+        for (let j = 1; j < array.length - 1 - i; j++) {
+            if (array[max] < array[j]) max = j;
+        }
+        if (max !== array.length - 1 - i) {
+            let temp = array[array.length - 1 - i];
+            array[array.length - 1 - i] = array[max];
+            array[max] = temp;
+        }
+    }
+    console.log(array);
+
+
+
+</script>

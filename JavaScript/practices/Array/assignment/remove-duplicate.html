@@ -1,7 +1,40 @@
 <script>
-    let arr = [1, 2, 1, 2, 3, 4, 5, 6, 6];
-    let newArr = arr.filter((elem, index) => {
-        return arr.indexOf(elem) === index;
-    })
-    console.log(newArr);
+    let arr = [1, 2, "m", 2, 3, 4, "m", 6, 6];
+
+    // let newArr = arr.filter((elem, index) => {
+    //     return arr.indexOf(elem) === index;
+    // })
+    // console.log(newArr);
+
+    function myIncludes(arr, elem) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === elem) {
+                return true;
+            }
+        }
+        return false;
+    }
+    function removeDuplicate(array) {
+        let newArr = [];
+        for (let i = 0; i < array.length; i++) {
+            if (!myIncludes(newArr, array[i])) {
+                newArr[newArr.length] = array[i];
+            }
+        }
+        return newArr;
+    }
+    console.log(removeDuplicate(arr));
+
+    function getUnique(arr) {
+        let temp = {};
+        let output = [];
+        for (let i = 0; i < arr.length; i++) {
+            temp[arr[i]] = true;
+        }
+        for (const key in temp) {
+            output[output.length] = isNaN(key) ? key : Number(key);
+        }
+        return output;
+    }
+    console.log(getUnique(arr));
 </script>

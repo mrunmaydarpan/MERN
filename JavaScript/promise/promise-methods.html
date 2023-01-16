@@ -1,0 +1,14 @@
+<script>
+    let result = Promise.resolve("Promise resolved");
+    console.log(result);
+    let result1 = Promise.reject("rejected function");
+    console.log(result1);
+
+    pro1 = Promise.resolve("pass");
+    pro2 = Promise.resolve("pass 2")
+    pro3 = Promise.reject("error bro");
+    let result2 = Promise.all([pro1, pro2, pro3]);
+
+    console.log(Promise.allSettled([pro1, pro2, pro3]));
+    console.log(result2);
+</script>

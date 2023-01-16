@@ -7,13 +7,7 @@
         let seconds = totalSeconds % 60;
         let hours = Math.trunc(totalMinutes / 60);
         let minutes = totalMinutes % 60;
-
-        return {
-            h: hours,
-            m: minutes,
-            s: seconds
-        };
+        return `${hours} hr : ${minutes} mim : ${seconds} sec`;
     }
-
-    console.log(convert(input).h + "hrs " + convert(input).m + "min " + convert(input).s + "sec");
+    console.log(convert(input));
 </script>

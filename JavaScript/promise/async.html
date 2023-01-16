@@ -1,0 +1,15 @@
+<script>
+    console.log('execution started');
+    
+    setInterval(() => {
+        console.log("wait")
+        return true;
+    }, 3000);
+
+    async function dataFetch() {
+        console.log("fetching....");
+        await set();
+        console.log("fetched data");
+    }
+    dataFetch();
+</script>
