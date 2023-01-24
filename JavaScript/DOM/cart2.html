@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>cart</title>
+  <style>
+    nav {
+      background-color: teal;
+      padding: 20px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    #order {
+      padding: 10px 30px;
+      background-color: orange;
+      border-radius: 10px;
+    }
+
+    td {
+      text-align: center;
+      size: 20px;
+    }
+
+    .qtyBtn {
+      padding: 10px 10px;
+    }
+
+    table,
+    td,
+    th {
+      border: 2px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <h1>Swiggy Cart</h1>
+  </nav>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit mollitia
+    nobis, ab asperiores distinctio aut cum praesentium maiores
+    exercitationem. Praesentium, magni aliquid in est ullam reiciendis harum
+    atque libero temporibus. Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Itaque, harum. Provident nam facere, laudantium
+    perferendis porro rerum nulla asperiores reprehenderit eligendi aliquid
+    esse. Consectetur debitis cum culpa similique, rem dignissimos.
+  </p>
+  <br />
+  <div align="center">
+    <table width="80%" id="tableId">
+      <tr>
+        <th>S.no</th>
+        <th>Img</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td class="sn">0</td>
+        <td class="img"></td>
+        <td class="nameCls">name</td>
+        <td class="priceCls">price</td>
+        <td>
+          <div class="qty_UIX"></div>
+        </td>
+        <td class="totalCls">0</td>
+      </tr>
+      <tr>
+        <td class="sn">0</td>
+        <td class="img"></td>
+        <td class="nameCls">name</td>
+        <td class="priceCls">price</td>
+        <td>
+          <div class="qty_UIX"></div>
+        </td>
+        <td class="totalCls">0</td>
+      </tr>
+      <tr>
+        <td class="sn">0</td>
+        <td class="img"></td>
+        <td class="nameCls">name</td>
+        <td class="priceCls">price</td>
+        <td>
+          <div class="qty_UIX"></div>
+        </td>
+        <td class="totalCls">0</td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <div align="right"><button id="order">Order Now</button></div>
+  </div>
+
+  <script>
+    let qty = document.getElementsByClassName("qtyCls");
+    let total = document.getElementsByClassName("totalCls");
+    let snoTag = document.getElementsByClassName("sn");
+    let nameTag = document.getElementsByClassName("nameCls");
+    let priceTag = document.getElementsByClassName("priceCls");
+    let btnTag = document.getElementsByClassName("qty_UIX");
+    let imgTag = document.getElementsByClassName("img");
+    let tableTag = document.getElementById("tableId");
+    let count = [];
+    let items = [
+      {
+        Sno: 1,
+        name: "Biriyani",
+        price: 299,
+        image: "../img/biriyani.jpg",
+      },
+      {
+        Sno: 2,
+        name: "Dosa",
+        price: 40,
+        image: "../img/dosa.jpeg",
+      },
+      {
+        Sno: 3,
+        name: "Puri Sabji",
+        price: 70,
+        image: "../img/puri sabji.jpg",
+      },
+    ];
+
+    for (let i = 0; i < items.length; i++) {
+      count[i] = 0;
+      snoTag[i].innerHTML = items[i].Sno;
+      nameTag[i].innerHTML = items[i].name;
+      priceTag[i].innerHTML = items[i].price;
+      btnTag[i].innerHTML = ` <button class="qtyBtn" onclick="increment(${i})">+</button> <span class="qtyCls">0</span> <button
+                            class="qtyBtn" onclick="decrement(${i})">-</button>`;
+      imgTag[i].innerHTML = `<img src="${items[i].image}" alt="error" height=70px>`;
+    }
+
+    function increment(num) {
+      count[num]++;
+      qty[num].innerHTML = count[num];
+      total[num].innerHTML = items[num].price * count[num];
+    }
+
+    function decrement(num) {
+      if (count[num] > 0) count[num]--;
+      qty[num].innerHTML = count[num];
+      total[num].innerHTML = items[num].price * count[num];
+    }
+  </script>
+</body>
+
+</html>

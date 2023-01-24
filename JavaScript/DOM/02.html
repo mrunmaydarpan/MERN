@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DOM 01</title>
+    <style>
+        button:nth-child(1),
+        button:nth-child(2) {
+            background-color: cyan;
+            padding: 10px 20px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button>LogIn</button>
+    <button>SignUp</button>
+
+    <script>
+        let headTag = document.head;
+        console.log(headTag);
+        let bodyTag = document.body;
+        console.log(bodyTag);
+        let logInBtn = document.body.button;
+        console.log(logInBtn);    //undefined
+    </script>
+</body>
+
+</html>

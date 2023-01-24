@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DOM 04</title>
+    <style>
+        button {
+            background-color: cyan;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="increment()">increment</button>
+    <button onclick="decrement()">decrement</button>
+    <h2 id="count">:</h2>
+
+    <script>
+        let count = 0;
+        let countTag = document.getElementById("count");
+        countTag.innerText = `count: ${count}`;
+
+        function increment() {
+            count++;
+            countTag.innerText = `count: ${count}`;
+        }
+
+        function decrement() {
+            countTag.innerText = `count: ${count > 1 ? count-- : 1}`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Likes & Dislikes</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        header,
+        footer {
+            background-color: brown;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            color: whitesmoke;
+            position: fixed;
+        }
+
+        .font {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #foot {
+            bottom: 0px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto auto;
+            /* padding-top: 200px; */
+            height: 100vh;
+        }
+
+        #div1 {
+            text-align: center;
+            border-left: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #div0 {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            border: none;
+            border-radius: 20px;
+        }
+
+        button:hover {
+            box-shadow: 0 0 15px green;
+            border-radius: 20px;
+        }
+
+        button:active {
+            box-shadow: 0 0 15px red;
+            transform: scale(.9);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="letter-spacing: 7px;" class="font">Likes Meter</h1>
+    </header>
+
+    <div class="container">
+        <div id="div0">
+            <button onclick="increment(0)"><img src="../img/like.png" alt="error" height="200px"></button>
+            <br>
+            <h3 id="likes" class="font">Likes: 0</h3>
+        </div>
+        <div id="div1">
+            <button onclick="increment(1)"><img src="../img/dislike.png" alt="error" height="200px"></button>
+            <br>
+            <h3 id="dislikes" class="font">Dislikes: 0</h3>
+        </div>
+    </div>
+
+    <footer id="foot" class="font">
+        <h1 id="total">Total Reactions: 0</h1>
+    </footer>
+
+    <script>
+        let likeCount = document.getElementById("likes");
+        let dislikeCount = document.getElementById("dislikes");
+        let totalTag = document.getElementById("total");
+        let count = [0, 0];
+
+        function increment(num) {
+            count[num]++;
+            switch (num) {
+                case 0:
+                    likeCount.innerText = `Likes: ${count[num]}`;
+                    break;
+                case 1:
+                    dislikeCount.innerText = `Dislikes: ${count[num]}`;
+                    break;
+            }
+            totalTag.innerText = `Total Reaction: ${count[0] + count[1]}`;
+        }
+    </script>
+</body>
+
+
+</html>

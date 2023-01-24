@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>cart</title>
+    <style>
+        nav {
+            background-color: teal;
+            padding: 20px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        #order {
+            padding: 10px 30px;
+            background-color: orange;
+            border-radius: 10px;
+        }
+
+        td {
+            text-align: center;
+            /* border: 2px solid black; */
+        }
+
+        .qtyBtn {
+            padding: 10px 10px;
+        }
+
+        table,
+        td,
+        th {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>Swiggy Cart</h1>
+    </nav>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit mollitia nobis, ab asperiores distinctio aut
+        cum praesentium maiores exercitationem. Praesentium, magni aliquid in est ullam reiciendis harum atque libero
+        temporibus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, harum. Provident nam facere, laudantium
+        perferendis porro rerum nulla asperiores reprehenderit eligendi aliquid esse. Consectetur debitis cum culpa
+        similique, rem dignissimos.
+    </p>
+    <br>
+    <button id="order">Order Now</button><br><br>
+    <div align="center">
+        <table width="80%">
+            <tr>
+                <th>S.no</th>
+                <th>Img</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Total</th>
+            </tr>
+            <td>1</td>
+            <td>
+                <img src="../v4.jpg" alt="error" width="50px">
+            </td>
+            <td>Biriyani</td>
+            <td>299</td>
+            <td>
+                <div>
+                    <button class="qtyBtn" onclick="increment()">+</button> <span id="qty">0</span> <button
+                        class="qtyBtn" onclick="decrement()">-</button>
+                </div>
+            </td>
+            <td id="total">0</td>
+        </table>
+    </div>
+
+    <script>
+        let qty = document.getElementById("qty");
+        let total = document.getElementById("total");
+        let count = 0;
+
+        function increment() {
+            count++;
+            qty.innerText = count;
+            total.innerText = count * 299;
+        }
+
+        function decrement() {
+            if (count > 0)
+                count--;
+            qty.innerText = count;
+            total.innerText = count * 299;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>05</title>
+    <style>
+        div {
+            background-color: rgb(67, 2, 2);
+            padding: 30px;
+            text-align: center;
+        }
+
+        div>h1 {
+            color: white;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 id="display">Text</h1>
+        <button id="btn1" onclick="print(0)">Mrunmay</button>
+        <button id="btn2" onclick="print(1)">Darpan</button>
+        <button id="btn3" onclick="print(2)">Behera</button>
+    </div>
+    <script>
+        let displayTag = document.getElementById("display");
+        let btnTag_1 = document.getElementById("btn1");
+        let btnTag_2 = document.getElementById("btn2");
+        let btnTag_3 = document.getElementById("btn3");
+        
+        function print(num) {
+            switch (num) {
+                case 0:
+                    displayTag.innerText = btnTag_1.innerText;
+                    break;
+                case 1:
+                    displayTag.innerText = btnTag_2.innerText;
+                    break;
+                case 2:
+                    displayTag.innerText = btnTag_3.innerText;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

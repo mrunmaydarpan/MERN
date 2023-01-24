@@ -1,0 +1,25 @@
+<script>
+    let addResult = function () {
+        return 100;
+    }
+    let subResult = function () {
+        return 40;
+    }
+    let mulResult = function () {
+        return 50;
+    }
+
+    function curry(a) {
+        return function (b) {
+            return function (c) {
+                console.log(a + b + c);
+            }
+        }
+    }
+
+    let result = curry(addResult());
+    let finalResult = result(subResult());
+    let goodCurry = finalResult(mulResult());
+    console.log(goodCurry);
+    
+</script>
