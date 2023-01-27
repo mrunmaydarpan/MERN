@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <script>
+        let name = 'darpan';
+        localStorage.setItem('stuName', name);
+        let studentName = localStorage.getItem("stuName");
+        console.log(studentName);
+        localStorage.setItem("stuName", 'keshab');
+        studentName = localStorage.getItem("stuName");
+        console.log(studentName);
+        localStorage.removeItem("stuName");
+    </script>
+</body>
+
+</html>

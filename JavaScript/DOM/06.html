@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DOM 06</title>
+    <style>
+        /* div>h1:nth-child() */
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 id="h1_id">one</h1>
+        <h1>two</h1>
+        <h1 class="h3_cls">three</h1>
+    </div>
+
+    <script>
+        let h1Tag_1 = document.querySelector("#h1_id");
+        console.log(h1Tag_1);
+        let h1Tag_2 = document.querySelector("div>h1:nth-child(2)")
+        console.log(h1Tag_2);
+        let h1Tag_3 = document.querySelector(".h3_cls");
+        console.log(h1Tag_3);
+        let all = document.querySelectorAll("div>h1");
+        console.log(all);
+    </script>
+</body>
+
+</html>

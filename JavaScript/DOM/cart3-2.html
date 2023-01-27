@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>cart</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        nav {
+            background-color: teal;
+            padding: 20px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        #order {
+            padding: 10px 30px;
+            background-color: orange;
+            border-radius: 10px;
+        }
+
+        td {
+            text-align: center;
+            size: 20px;
+        }
+
+        .addqtyCls,
+        .subqtyCls {
+            padding: 10px 10px;
+        }
+
+        table,
+        td,
+        th {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        #total_id {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>Swiggy Cart</h1>
+    </nav>
+    <br />
+    <div align="center">
+        <table width="80%" id="tableId">
+
+        </table>
+        <br>
+        <br>
+        <div align="right">
+            <h2 id="total_id">Total: <span>0</span></h2>
+            <button id="order">Order Now</button>
+        </div>
+    </div>
+
+    <script>
+        let count = [];
+        let items = [
+            {
+                Sno: 1,
+                name: "Biriyani",
+                price: 299,
+                image: "../img/biriyani.jpg",
+            },
+            {
+                Sno: 2,
+                name: "Dosa",
+                price: 40,
+                image: "../img/dosa.jpeg",
+            },
+            {
+                Sno: 3,
+                name: "Puri Sabji",
+                price: 70,
+                image: "../img/puri sabji.jpg",
+            },
+            {
+                Sno: 4,
+                name: "Non veg Platter",
+                price: 350,
+                image: "../img/nonveg-platter.webp",
+            },
+            {
+                Sno: 5,
+                name: "kebab",
+                price: 100,
+                image: "../img/kebab.jpg",
+            },
+            {
+                Sno: 5,
+                name: "kebab",
+                price: 100,
+                image: "../img/biriyani.jpg",
+            },
+        ];
+
+        let tableTag = document.querySelector("#tableId");
+        tableTag.innerHTML = "<tr><th>S.no</th><th>Img</th><th>Name</th><th>Price</th><th>Qty</th><th>Total</th></tr>";
+
+        for (let i = 0; i < items.length; i++) {
+            tableTag.innerHTML += '<tr><td class="sn">0</td><td class="img"></td><td class="nameCls">name</td><td class="priceCls">price</td><td><div class="qty_UIX"></div></td><td class="totalCls">0</td></tr>';
+        }
+
+        let total = document.querySelectorAll(".totalCls");
+        let snoTag = document.querySelectorAll(".sn");
+        let nameTag = document.querySelectorAll(".nameCls");
+        let priceTag = document.querySelectorAll(".priceCls");
+        let btnTag = document.querySelectorAll(".qty_UIX");
+        let imgTag = document.querySelectorAll(".img");
+        let totalTag = document.querySelector("h2>span");
+        let orderBtn = document.querySelector("#order");
+
+        for (let i = 0; i < items.length; i++) {
+            count[i] = 0;
+            snoTag[i].innerHTML = items[i].Sno;
+            nameTag[i].innerHTML = items[i].name;
+            priceTag[i].innerHTML = items[i].price;
+            btnTag[i].innerHTML = `<button class="addqtyCls">+</button> <span class="qtyCls">0</span> <button
+                            class="subqtyCls">-</button> <button class="dltbtn"><img src="../img/delete.png" alt="" height="15px"></button>`;
+            imgTag[i].innerHTML = `<img src="${items[i].image}" alt="error" height=70px>`;
+        }
+        let qty = document.querySelectorAll(".qtyCls");
+        let addQtyBtns = document.querySelectorAll(".addqtyCls");
+        let subQtyBtns = document.querySelectorAll(".subqtyCls");
+        let dltBtns = document.querySelectorAll(".dltbtn");
+        let totalAmt = 0;
+
+        function fetchTotal() {
+            let totalP = 0;
+            for (let i = 0; i < total.length; i++) {
+                totalP += Number(total[i].innerHTML);
+            }
+            return totalP;
+        }
+
+        for (let i = 0; i < addQtyBtns.length; i++) {
+            let num = i;
+            addQtyBtns[num].addEventListener('click', () => {
+                count[num]++;
+                qty[num].innerHTML = count[num];
+                total[num].innerHTML = items[num].price * count[num];
+                totalTag.innerHTML = fetchTotal();
+            });
+
+            subQtyBtns[num].addEventListener('click', () => {
+                if (count[num] > 0) count[num]--;
+                qty[num].innerHTML = count[num];
+                total[num].innerHTML = items[num].price * count[num];
+                totalTag.innerHTML = fetchTotal();
+            });
+
+            dltBtns[num].addEventListener('click', () => {
+                count[num] = 0;
+                qty[num].innerHTML = count[num];
+                total[num].innerHTML = items[num].price * count[num];
+                totalTag.innerHTML = fetchTotal();
+            });
+        }
+        orderBtn.addEventListener('click', () => {
+            alert("Thank u for Ordering");
+        });
+    </script>
+</body>
+
+</html>

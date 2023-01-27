@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Likes & Dislikes</title>
+    <!-- <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css"> -->
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        header,
+        footer {
+            background-color: brown;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            color: whitesmoke;
+            position: fixed;
+        }
+
+        .font {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #foot {
+            bottom: 0px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto auto;
+            /* padding-top: 200px; */
+            height: 100vh;
+        }
+
+        #div1 {
+            text-align: center;
+            border-left: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #div0 {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            border: none;
+            border-radius: 20px;
+        }
+
+        button:hover {
+            box-shadow: 0 0 15px green;
+            border-radius: 20px;
+        }
+
+        button:active {
+            box-shadow: 0 0 15px red;
+            transform: scale(.9);
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1 style="letter-spacing: 7px;" class="font">Likes Meter</h1>
+    </header>
+
+    <div class="container">
+        <div id="div0">
+            <button id="likebtn"><img src="../img/like.png" alt="error" height="200px"></button>
+            <br>
+            <h3 class="font">Likes: <span id="likes">0</span></h3>
+        </div>
+        <div id="div1">
+            <button id="dislikebtn"><img src="../img/dislike.png" alt="error" height="200px"></button>
+            <br>
+            <h3 class="font">Dislikes: <span id="dislikes">0</span></h3>
+        </div>
+    </div>
+
+    <footer id="foot" class="font">
+        <h1>Total Reactions: <span id="total">0</span></h1>
+    </footer>
+
+    <script>
+        let likeCountTag = document.querySelector("#likes");
+        let dislikeCountTag = document.querySelector("#dislikes");
+        let totalTag = document.querySelector("#total");
+        let headerTag = document.querySelector("#header");
+        let likeBtn = document.querySelector("#likebtn")
+        let disLikeBtn = document.querySelector("#dislikebtn");
+
+        let likeCount = +(localStorage.getItem("likes") ? localStorage.getItem("likes") : 0);
+        let dislikeCount = +(localStorage.getItem("dislike") ? localStorage.getItem("dislike") : 0);
+        let total = +(localStorage.getItem("total") ? localStorage.getItem("total") : 0);
+
+        likeCountTag.innerText = likeCount;
+        dislikeCountTag.innerText = dislikeCount;
+        totalTag.innerText = total;
+
+        likeBtn.addEventListener('click', () => {
+            likeCount++;
+            localStorage.setItem("likes", likeCount)
+            likeCountTag.innerText = likeCount;
+            total = likeCount + dislikeCount;
+            totalTag.innerText = total;
+            localStorage.setItem("total", total);
+        });
+
+        disLikeBtn.addEventListener('click', () => {
+            dislikeCount++;
+            localStorage.setItem("dislike", dislikeCount)
+            dislikeCountTag.innerText = dislikeCount;
+            total = likeCount + dislikeCount;
+            totalTag.innerText = total;
+            localStorage.setItem("total", total);
+        });
+        totalTag.addEventListener('dblclick', () => {
+            localStorage.clear();
+            likeCount = 0;
+            dislikeCount = 0;
+            likeCountTag.innerText = +(localStorage.getItem("likes") ? localStorage.getItem("likes") : 0);
+            dislikeCountTag.innerText = +(localStorage.getItem("dislike") ? localStorage.getItem("dislike") : 0);
+            totalTag.innerText = +(localStorage.getItem("total") ? localStorage.getItem("total") : 0);
+        })
+    </script>
+</body>
+
+
+</html>

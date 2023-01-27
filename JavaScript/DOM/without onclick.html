@@ -62,7 +62,7 @@
 
         button:active {
             box-shadow: 0 0 15px red;
-            transform: scale(.9);
+            transform: scale(.95);
         }
     </style>
 </head>
@@ -74,12 +74,12 @@
 
     <div class="container">
         <div id="div0">
-            <button onclick="increment(0)"><img src="../img/like.png" alt="error" height="200px"></button>
+            <button id="likebtn"><img src="../img/like.png" alt="error" height="200px"></button>
             <br>
             <h3 id="likes" class="font">Likes: 0</h3>
         </div>
         <div id="div1">
-            <button onclick="increment(1)"><img src="../img/dislike.png" alt="error" height="200px"></button>
+            <button id="dislikebtn"><img src="../img/dislike.png" alt="error" height="200px"></button>
             <br>
             <h3 id="dislikes" class="font">Dislikes: 0</h3>
         </div>
@@ -90,29 +90,35 @@
     </footer>
 
     <script>
-        let likeCount = document.getElementById("likes");
-        let dislikeCount = document.getElementById("dislikes");
-        let totalTag = document.getElementById("total");
-        let headerTag = document.getElementById("header");
+        let likeCount = document.querySelector("#likes");
+        let dislikeCount = document.querySelector("#dislikes");
+        let totalTag = document.querySelector("#total");
+        let headerTag = document.querySelector("#header");
+        let likeBtn = document.querySelector("#likebtn")
+        let disLikeBtn = document.querySelector("#dislikebtn");
         let count = [0, 0];
 
-        function increment(num) {
-            count[num]++;
-            switch (num) {
-                case 0:
-                    likeCount.innerText = `Likes: ${count[num]}`;
-                    break;
-                case 1:
-                    dislikeCount.innerText = `Dislikes: ${count[num]}`;
-                    break;
-            }
+        likeBtn.addEventListener('click', () => {
+            count[0]++;
+            likeCount.innerText = `Likes: ${count[0]}`;
             totalTag.innerText = `Total Reaction: ${count[0] + count[1]}`;
             if (count[0] > count[1]) {
                 headerTag.style.backgroundColor = "green";
             } else {
                 headerTag.style.backgroundColor = "orange";
             }
-        }
+        });
+
+        disLikeBtn.addEventListener('click', () => {
+            count[1]++;
+            dislikeCount.innerText = `Dislikes: ${count[1]}`;
+            totalTag.innerText = `Total Reaction: ${count[1] + count[1]}`;
+            if (count[0] > count[1]) {
+                headerTag.style.backgroundColor = "green";
+            } else {
+                headerTag.style.backgroundColor = "orange";
+            }
+        });
     </script>
 </body>
 
