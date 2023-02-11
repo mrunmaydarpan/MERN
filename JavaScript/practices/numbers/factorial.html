@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let j = 1;
+    let i = +prompt("enter number for factorial:");
+    console.log("entered " + i);
 
-<head>
-    <title>factorial</title>
-</head>
-
-<body>
-    <script>
-        let j = 1;
-        let i = +prompt("enter number for factorial:");
-        console.log("entered " + i);
-
-        if (i === 0) {
-            j = 0;
-        } else {
-            for (i; i >= 1; i--) {
-                j = i * j;
-            }
+    if (i === 0) {
+        j = 0;
+    } else {
+        for (i; i >= 1; i--) {
+            j = i * j;
         }
-        console.log(j);
-    </script>
-</body>
-
-</html>
+    }
+    console.log(j);
+</script>

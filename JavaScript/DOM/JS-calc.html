@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JS Calculator</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-5 m-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="text-center">JS calculator</h1>
+                    </div>
+                    <div class="card-body bg-light">
+                        <form id="form">
+                            <div class="form-group">
+                                <input id="numIn1" type="number" class="form-control" placeholder="Enter number">
+                            </div>
+                            <div class="form-group">
+                                <input id="numIn2" type="number" class="form-control mt-4" placeholder="Enter number">
+                            </div>
+                            <div class="form-group mt-4 text-center">
+                                <!-- <input type="submit" class="btn btn-md btn-primary">
+                                <input type="submit" class="btn btn-md btn-primary">
+                                <input type="submit" class="btn btn-md btn-primary">
+                                <input type="submit" class="btn btn-md btn-primary">
+                                <input type="submit" class="btn btn-md btn-primary"> -->
+                                <button class="btn btn-md btn-primary">+</button>
+                                <button class="btn btn-md btn-primary">-</button>
+                                <button class="btn btn-md btn-primary">*</button>
+                                <button class="btn btn-md btn-primary">/</button>
+                                <button class="btn btn-md btn-primary">%</button>
+                            </div>
+                            <div class="form-group mt-4 text-center">
+                                <h2 class=""> <span id="num1">0</span> <span id="op">*</span> <span id="num2">0</span>
+                                    = <span id="res">0</span></h2>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let btnTags = document.querySelectorAll(".btn");
+        let formTag = document.querySelector('#form');
+        let num_1_Tag = document.querySelector('#num1');
+        let num_2_Tag = document.querySelector("#num2");
+        let numInTag_1 = document.querySelector('#numIn1');
+        let numInTag_2 = document.querySelector('#numIn2');
+        let resTag = document.querySelector("#res");
+        let opTag = document.querySelector('#op');
+
+        formTag.addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+
+        btnTags[0].addEventListener('click', () => {
+            num_1_Tag.innerHTML = numInTag_1.value;
+            num_2_Tag.innerHTML = numInTag_2.value;
+            opTag.innerHTML = '+';
+            resTag.innerHTML = +numInTag_1.value + +numInTag_2.value;
+        });
+        btnTags[1].addEventListener('click', () => {
+            num_1_Tag.innerHTML = numInTag_1.value;
+            num_2_Tag.innerHTML = numInTag_2.valvalueue;
+            opTag.innerHTML = '-';
+            resTag.innerHTML = +numInTag_1.value - +numInTag_2.value;
+        });
+        btnTags[2].addEventListener('click', () => {
+            num_1_Tag.innerHTML = numInTag_1.value;
+            num_2_Tag.innerHTML = numInTag_2.value;
+            opTag.innerHTML = '*';
+            resTag.innerHTML = +numInTag_1.value * +numInTag_2.value;
+        });
+        btnTags[3].addEventListener('click', () => {
+            num_1_Tag.innerHTML = numInTag_1.value;
+            num_2_Tag.innerHTML = numInTag_2.value;
+            opTag.innerHTML = '/';
+            resTag.innerHTML = +numInTag_1.value / +numInTag_2.value;
+        });
+        btnTags[4].addEventListener('click', () => {
+            num_1_Tag.innerHTML = numInTag_1.value;
+            num_2_Tag.innerHTML = numInTag_2.value;
+            opTag.innerHTML = '%';
+            resTag.innerHTML = +numInTag_1.value % +numInTag_2.value;
+        });
+    </script>
+</body>
+
+</html>

@@ -11,7 +11,7 @@
         let count = 0;
 
         function prime() {
-            for (let i = 2; i < num; i++) {
+            for (let i = 2; i < Math.trunc(num/2); i++) {
                 if (num % i == 0) {
                     count++;
                 }

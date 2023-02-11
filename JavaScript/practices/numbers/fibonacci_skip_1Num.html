@@ -3,14 +3,14 @@
     let end = +prompt("enter n (Upper limit) range:");
     let str = '';
     let a = 0, b = 1;
-    let steps = 0;
+    let steps = 4;
 
     while (a < end) {
         let c = a + b;
         if (a >= start) {
             if (steps == 0) {
                 str += a + " ";
-                steps = 1; //skip one step
+                steps = 4; //skip four step
             } else {
                 steps--;
             }

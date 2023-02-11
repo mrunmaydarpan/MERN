@@ -3,10 +3,16 @@
 
 <head>
     <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
+    <style>
+        /* .table {
+            display: flex;
+        } */
+    </style>
 </head>
 
 <body>
-    <br>
+    <span style="padding:30px;color:red;">*click any button to display content</span>
+    <br><br>
     <div class="container-fluid btn-group">
         <button class="btn btn-primary">All</button>
         <button class="btn btn-warning">Male</button>
@@ -66,10 +72,12 @@
         let tableHTML_head = `<tr><th>S.no</th><th>Name</th><th>Gender</th></tr>`;
         let tableHTML = '';
         let btnTags = document.querySelectorAll(".btn")
-    
+
         tableTag.innerHTML = tableHTML_head + tableHTML;
+        tableTag.style.display = 'none';
 
         function display(num, cond) {
+            tableTag.style.display = '';
             tableHTML = '';
             for (let i = 0; i < details.length; i++) {
                 switch (num) {

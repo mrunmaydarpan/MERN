@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="../MDB-Free_4.20.0/css/bootstrap.css">
+    <link rel="stylesheet" href="../MDB-Free_4.20.0/css/mdb.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.2.1-web/fontawesome-free-6.2.1-web/css/all.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center align-items-center m-0" style="height: 100vh;">
+            <div class="login_oueter">
+                <form method="post" id="login" autocomplete="off" class="bg-light border p-3">
+                    <div class="form-row">
+                        <h4 class="ml-2">password</h4>
+                        <div class="col-12">
+                            <div class="input-group mb-3">
+                                <input name="password" type="password" value="" class="input form-control" id="password"
+                                    placeholder="password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" onclick="password_show_hide();">
+                                        <i class="fas fa-eye" id="show_eye"></i>
+                                        <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function password_show_hide() {
+            var pwdTag = document.getElementById("password");
+            var show_eye = document.getElementById("show_eye");
+            var hide_eye = document.getElementById("hide_eye");
+            hide_eye.classList.remove("d-none");
+            if (pwdTag.type === "password") {
+                pwdTag.type = "text";
+                show_eye.style.display = "none";
+                hide_eye.style.display = "block";
+            } else {
+                pwdTag.type = "password";
+                show_eye.style.display = "block";
+                hide_eye.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

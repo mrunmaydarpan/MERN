@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let a = 0
+    let b = 1
+    let n = +prompt("enter n range:");
 
-<head>
-    <title>fibonacci series</title>
-</head>
-
-<body>
-    <script>
-        let a = 0
-        let b = 1
-        let n = +prompt("enter n range:");
-
-        for (let i = 1; i <= n; i++) {
-            let c = a + b;
-            console.log(a);
-            a = b;
-            b = c;
-        }
-    </script>
-</body>
-
-</html>
+    for (let i = 1; i <= n; i++) {
+        let c = a + b;
+        console.log(a);
+        a = b;
+        b = c;
+    }
+</script>

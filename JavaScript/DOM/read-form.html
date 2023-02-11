@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-5 m-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="text-center">LogIn</h1>
+                    </div>
+                    <div class="card-body bg-light">
+                        <form id="formId">
+                            <div class="form-group">
+                                <input id="usn" type="text" class="form-control" placeholder="Enter Username">
+                            </div>
+                            <div class="form-group">
+                                <input id="pwd" type="password" class="form-control mt-4" placeholder="Enter Password">
+                            </div>
+                            <div class="form-group mt-4">
+                                <input type="submit" name="" id="sub" class="btn btn-md btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Script -->
+    <script>
+        let formTag = document.querySelector("#formId");
+        let usernameTag = document.querySelector("#usn");
+        let passwordIn = document.querySelector("#pwd");
+        let submitBtn = document.querySelector("#sub");
+
+        let usnData = null;
+        let pwdData = null;
+
+        formTag.addEventListener('submit', function (event) {
+            event.preventDefault();
+            usnData = usernameTag.value;
+            pwdData = passwordIn.value;
+            console.log(usnData);
+            console.log(pwdData);
+        });
+
+        
+    </script>
+</body>
+
+</html>

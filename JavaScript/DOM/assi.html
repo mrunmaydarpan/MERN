@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <link rel="stylesheet" href="../MDB-Free_4.20.0/css/bootstrap.css">
+    <link rel="stylesheet" href="../MDB-Free_4.20.0/css/mdb.css">
+</head>
+
+<body>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-5 m-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="text-center">Course Details</h1>
+                    </div>
+                </div>
+                <div class="card-body bg-dark text-white">
+                    <form>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Course</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="select-box">
+                                    <option value="">Select Course</option>
+                                    <option value="32000">MERN</option>
+                                    <option value="30000">JAVA</option>
+                                    <option value="29000">PYTHON</option>
+                                    <option value="35000">AWS</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Fees</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="fees" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Caste</label>
+                            <div class="form-check form-check-inline ml-3">
+                                <input class="form-check-input" type="radio" name="r1" value="1000"
+                                    onclick="getValue();">
+                                <label class="form-check-label" for="inlineRadio1">GEN</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="r1" value="1500"
+                                    onclick="getValue();">
+                                <label class="form-check-label" for="inlineRadio2">OBC</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="r1" value="2000"
+                                    onclick="getValue();">
+                                <label class="form-check-label" for="inlineRadio1">SC</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="r1" value="2000"
+                                    onclick="getValue();">
+                                <label class="form-check-label" for="inlineRadio1">ST</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Cons</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="cons" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Paid</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="pay">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Due</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="dues">
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+                        <button class="btn btn-green" onclick="total();">Calculate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script code -->
+    <script>
+        let selectBox = document.querySelector("#select-box");
+        let displayBox = document.querySelector("#fees");
+        let radioBtn = document.getElementsByName("r1");
+        let Cons = document.querySelector("#cons")
+        let paid = document.querySelector("#pay");
+        let dues = document.querySelector("#dues");
+
+        selectBox.addEventListener("change", function () {
+            displayBox.value = selectBox.value;
+        })
+
+        function getValue() {
+            for (let i = 0; i < radioBtn.length; i++) {
+                if (radioBtn[i].checked) {
+                    Cons.value = radioBtn[i].value;
+                }
+            }
+        }
+
+        function total() {
+            dues.value = Number(displayBox.value) - (Number(Cons.value) + Number(paid.value));
+        }
+    </script>
+</body>
+
+</html>

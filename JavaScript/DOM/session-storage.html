@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>session-storage</title>
+</head>
+
+<body>
+    <script>
+        let items = [
+            {
+                Sno: 1,
+                name: "Biriyani",
+                price: 299,
+                image: "../img/biriyani.jpg",
+            },
+            {
+                Sno: 2,
+                name: "Dosa",
+                price: 40,
+                image: "../img/dosa.jpeg",
+            },
+            {
+                Sno: 3,
+                name: "Puri Sabji",
+                price: 70,
+                image: "../img/puri sabji.jpg",
+            },
+            {
+                Sno: 4,
+                name: "Non veg Platter",
+                price: 350,
+                image: "../img/nonveg-platter.webp",
+            },
+            {
+                Sno: 5,
+                name: "kebab",
+                price: 100,
+                image: "../img/kebab.jpg",
+            },
+            {
+                Sno: 5,
+                name: "kebab",
+                price: 100,
+                image: "../img/biriyani.jpg",
+            },
+        ];
+        localStorage.setItem('item', JSON.stringify(items));
+        // localStorage.clear();
+        let data = JSON.parse(localStorage.getItem('item'));
+        console.log(data);
+
+    </script>
+</body>
+
+</html>
