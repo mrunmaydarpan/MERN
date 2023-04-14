@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let num = +prompt("enter Number");
+    let primeFlag = false;
 
-<head>
-    <title>prime number check 02</title>
-</head>
-
-<body>
-    <script>
-        let num = +prompt("enter Number");
-        let primeFlag = false;
-
-        function prime() {
-            for (let i = 2; i <= Math.trunc(num / 2); i++) {
-                if (num % i == 0) {
-                    primeFlag = true;
-                    break;
-                }
-            }
-            if (primeFlag == false) {
-                window.alert(num + " is a prime number");
-            } else {
-                window.alert(num + " is not a prime number");
-            }
+    for (let i = 2; i <= Math.trunc(num / 2); i++) {
+        if (num % i == 0) {
+            primeFlag = true;
+            break;
         }
-        prime();
-    </script>
-</body>
-
-</html>
+    }
+    if (primeFlag == false) {
+        window.alert(num + " is a prime number");
+    } else {
+        window.alert(num + " is not a prime number");
+    }
+</script>

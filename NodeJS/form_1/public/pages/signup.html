@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"
+        integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            color: white;
+            padding: 10px 30px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>JS Riders</h1>
+    </div>
+    <div class="container col-md-6 col-10 p-4 my-5 border border-primary rounded">
+        <form action="" id="studentForm">
+            <div class="my-2">
+                <label for="username" class="form-label">Enter Username</label>
+                <input id="username" name="username" class="form-control" />
+            </div>
+            <div class="my-2">
+                <label for="email" class="form-label">Enter Gmail</label>
+                <input id="email" name="email" class="form-control" />
+            </div>
+            <div class="my-2">
+                <label for="phone" class="form-label">Enter Phone</label>
+                <div class="row">
+                    <div class="col-2">
+                        <select class="form-select" name="countryCode">
+                            <option value="">Select Country</option>
+                            <option value="+91">+91</option>
+                            <option value="+92">+92</option>
+                            <option value="+93">+93</option>
+                            <option value="+94">+94</option>
+                            <option value="+95">+95</option>
+                            <option value="+96">+96</option>
+                            <option value="+97">+97</option>
+                            <option value="+98">+98</option>
+                            <option value="+99">+99</option>
+                        </select>
+                    </div>
+                    <dev class="col"><input id="phone" name="phone" class="form-control " /></dev>
+                </div>
+            </div>
+            <div class="my-2">
+                <label for="">Gender</label>
+                <div>
+                    <input type="radio" name="gender" id="male" value="male" class="form-check-input">
+                    <label for="male" class="form-label">Male</label>
+
+                    <input type="radio" name="gender" id="female" value="female" class="form-check-input ms-5">
+                    <label for="female" class="form-label">Female</label>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary col-6">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const FORM = document.getElementById('studentForm');
+        const student = {
+            username: "",
+            email: "",
+            countryCode: "",
+            phone: null,
+            gender: ""
+        }
+        FORM.addEventListener("input", ({ target: { name, value } }) => {
+            if (name === 'phone') {
+                student[name] = Number(value);
+            }
+            student[name] = value;
+        })
+        FORM.addEventListener('submit', (event) => {
+            event.preventDefault();
+            fetch('/student', {
+                method: "POST",
+                body: JSON.stringify(student)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                }).catch(console.log);
+        })
+    </script>
+</body>
+
+</html>

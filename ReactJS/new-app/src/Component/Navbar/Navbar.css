@@ -1,0 +1,13 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dialogbtn {
+    font-size: 40px;
+    position: absolute;
+    color: white;
+    background: transparent;
+    left: -170px;
+    background-color: none;
+    border: none;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .main-container {
+        border: 2px solid black;
+        width: 50%;
+        margin: 100px auto;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .current-epxs {
+        text-align: end;
+        height: 25px;
+    }
+
+    .pres-exps {
+        text-align: end;
+        height: 12px;
+        font-weight: bold;
+    }
+
+    .solution-container {
+        border: 1px solid black;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .btn-container {
+        display: grid;
+        width: 90%;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        gap: 10px
+    }
+
+    button {
+        border: 1px solid black;
+        padding: 10px 0;
+        background: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .bg-green {
+        background-color: rgb(175, 255, 175);
+    }
+
+    button:hover {
+        background-color: rgb(227, 227, 227);
+    }
+
+    button:active {
+        background-color: rgb(158, 158, 158);
+    }
+</style>
+
+<body>
+    <div class="main-container">
+        <div class="solution-container">
+            <p id="prev" class="pres-exps"></p>
+            <h1 id="current" class="current-epxs"></h1>
+        </div>
+        <div id="allBtns" class="btn-container">
+
+        </div>
+    </div>
+    <script>
+        let btnContainer = document.getElementById("allBtns");
+        let cExps = document.getElementById('current');
+        let allBtns = ["7", "8", "9", "C", "AC", "4", "5", "6", "*", "prev", "1", "2", "3", "-", "/", "0", "00", ".", "+", "="];
+        function findSolution(exp) {
+            return eval(exp);
+        }
+        (() => {
+            allBtns.forEach((btnText) => {
+                let btn = document.createElement('button');
+                btn.innerText = btnText;
+                if (btnText === "=") btn.classList.add('bg-green')
+                btnContainer.appendChild(btn);
+            })
+            btnContainer.addEventListener('click', ({ target }) => {
+                let text = target.innerText;
+                if (text === "AC") {
+                    cExps.innerText = "";
+                    return;
+                }
+                if (text === "C") {
+                    let ctext = cExps.innerText;
+                    cExps.innerText = ctext.slice(0, ctext.length - 1);
+                    return;
+                }
+                if (text === "=") {
+                    document.getElementById('prev').innerText = cExps.innerText + "=";
+                    cExps.innerText = findSolution(cExps.innerText);
+                    return;
+                }
+                if (text === "prev") {
+                    let nText = document.getElementById('prev').innerText;
+                    cExps.innerText = nText.slice(0, nText.length - 1);
+                    return;
+                }
+                if (text.length <= 4) cExps.innerText = cExps.innerText + text;
+            })
+        })()
+    </script>
+</body>
+
+</html>

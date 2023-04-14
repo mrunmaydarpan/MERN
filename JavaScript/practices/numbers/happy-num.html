@@ -1,29 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let num = +prompt("enter a number");
+    let sums = 0;
 
-<head>
-    <title>happy number check</title>
-</head>
-
-<body>
-    <script>
-        let num = +prompt("enter a number");
-        let sums = 0;
-
-        while (num > 0 || sums != 1 && sums != 4) {
-            if (num == 0) {
-                num = sums;
-                sums = 0;
-            }
-            let rem = num % 10;
-            num = Math.trunc(num / 10);
-            sums += Math.pow(rem, 2);
+    while (num > 0 || sums != 1 && sums != 4) {
+        if (num == 0) {
+            num = sums;
+            sums = 0;
         }
-        if (sums == 1)
-            window.alert("happy number");
-        else
-            window.alert("not a happy number");
-    </script>
-</body>
-
-</html>
+        let rem = num % 10;
+        num = Math.trunc(num / 10);
+        sums += Math.pow(rem, 2);
+    }
+    if (sums == 1)
+        window.alert("happy number");
+    else
+        window.alert("not a happy number");
+</script>

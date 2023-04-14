@@ -1,0 +1,30 @@
+#product-container div {
+    display: flex;
+    float: left;
+}
+
+#product-container {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 45px;
+}
+
+#product-container img {
+    height: 70px;
+    width: 70px;
+    z-index: -2;
+}
+
+.product-para {
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+}
+
+#product-container a {
+    text-decoration: none;
+}

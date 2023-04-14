@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let num = +prompt("enter a number");
+    let sums = 0;
 
-<head>
-    <title>Perfect Number</title>
-</head>
-
-<body>
-    <script>
-        let num = +prompt("enter a number");
-        let sums = 0;
-
-        for (let i = 1; i <= Math.trunc(num / 2); i++) {
-            if (num % i == 0) {
-                sums += i;
-            }
+    for (let i = 1; i <= Math.trunc(num / 2); i++) {
+        if (num % i == 0) {
+            sums += i;
         }
-        if (num == sums) {
-            window.alert("perfect");
-        } else {
-            window.alert("not perfect");
-        }
-    </script>
-</body>
-
-</html>
+    }
+    if (num == sums) {
+        window.alert("perfect");
+    } else {
+        window.alert("not perfect");
+    }
+</script>

@@ -1,29 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let a = 0
+    let b = 1
 
-<head>
-    <title>fibonacci series</title>
-</head>
+    let n = +prompt("enter n (Upper limit) range:");
+    let str = '';
 
-<body>
-    <script>
-        let a = 0
-        let b = 1
-
-        let n = +prompt("enter n (Upper limit) range:");
-        let str = '';
-
-        while (true) {
-            let c = a + b;
-            if (a > n) {
-                break;
-            }
-            str = str + " " + a;
-            a = b;
-            b = c;
+    while (true) {
+        let c = a + b;
+        if (a > n) {
+            break;
         }
-        console.log(str);
-    </script>
-</body>
-
-</html>
+        str = str + " " + a;
+        a = b;
+        b = c;
+    }
+    console.log(str);
+</script>

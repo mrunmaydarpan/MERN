@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let num = +prompt("enter a number");
+    let count = 0;
 
-<head>
-    <title>evil or odin check</title>
-</head>
-
-<body>
-    <script>
-        let num = +prompt("enter a number");
-        let count = 0;
-
-        while (num > 0) {
-            let rem = num % 2;
-            num = Math.trunc(num / 2);
-            if (rem == 1) {
-                count++;
-            }
+    while (num > 0) {
+        let rem = num % 2;
+        num = Math.trunc(num / 2);
+        if (rem ==  ) {
+            count++;
         }
-        if (count % 2 == 0) {
-            window.alert("evil number");
-        } else {
-            window.alert("odin number");
-        }
-    </script>
-</body>
-
-</html>
+    }
+    if (count % 2 == 0) {
+        window.alert("evil number");
+    } else {
+        window.alert("odin number");
+    }
+</script>

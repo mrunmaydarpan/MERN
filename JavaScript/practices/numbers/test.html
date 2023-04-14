@@ -1,3 +1,20 @@
 <script>
+    let start = +prompt("Enter start");
+    let end = +prompt("Emter End: ");
+    let skip = 0;
 
+    function isPrime(n) {
+        for (let i = 2; i <= Math.trunc(n / 2); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return n > 1;
+    }
+    
+    for (let i = start; i <= end; i++) {
+        if ((isPrime(i) && skip++ % 2 == 0)) {
+            console.log(i);
+        }
+    }
 </script>

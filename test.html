@@ -1,42 +1,10 @@
 <script>
-    let str = prompt("enter a string");
-
-    let flags = [false, false, false, false, false];
-    let errResult = 'Error Code: ';
+    ///////////////////callback//////////////////////////////
     
-    function isuppercase(char) {
-        return /[A-Z]/.test(str);
-    }
-
-    function isLowerCase(char) {
-        return /[a-z]/.test(str);
-    }
-
-    if (str.length >= 8) {
-        flags[0] = true;
-        for (let i = 0; i < str.length; i++) {
-            let char = str[i];
-
-            if (!isNaN(char)) {
-                flags[1] = true;
-            }
-
-            if (isuppercase(char)) {
-                flags[2] = true;
-            } if (isLowerCase(char)) {
-                flags[3] = true;
-                console.log("checked true");
-            }
-
-            if (char == '!' || char == '@' || char == '#' || char == '&') {
-                flags[4] = true;
-            }
-        }
-
-        errResult += (flags[1] ? "" : "1 ") + (flags[2] ? "" : "2 ") + (flags[3] ? "" : "3 ") + (flags[4] ? "" : "4 ");
-        console.log(flags);
-        console.log(flags.every(elem => elem == true) ? "pass" : errResult);
-    } else {
-        console.log("string should be more than 8 character");
-    }
-</script>
+    // let sum = (fn) => {
+    //     let a = 10;
+    //     let b = 20;
+    //     return fn(a, b);
+    // }
+    console.log(sum((x, y) => x + y));
+// </script>
