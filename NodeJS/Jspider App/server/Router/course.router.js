@@ -1,14 +1,20 @@
+const { readFile } = require('fs');
+const { join } = require('path');
 
-const courseRouter = (method, res) => {
-
-    const { method, url } = req;
-    switch (method) {
-        case "GET":
+const courseRouter = (method,res) => {
+    switch(method) {
+        case "GET" :
+            readFile(join(__dirname,"..","db","course.json"),'utf-8',(err,data) => {
+                res.writeHead(200,{ "content-type" : "application/json",
+                "Access-Control-Allow-Origin" : '*',
+            })
+                res.end(data)
+            })
             return;
-        default:
-            res.whiteHead(405, { "contect-type": "application/json" })
-            res.end(JSON.stringify({ msg: "Method not allowed" }));
-            return;
+        default : 
+            res.writeHead(405,{ "content-type" : "application/json"})
+            res.end(JSON.stringify({ msg : "Method not allowed"}));
+        return;
     }
 }
 
