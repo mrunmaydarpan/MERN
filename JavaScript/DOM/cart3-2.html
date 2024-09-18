@@ -93,13 +93,7 @@
                 name: "kebab",
                 price: 100,
                 image: "../img/kebab.jpg",
-            },
-            {
-                Sno: 5,
-                name: "kebab",
-                price: 100,
-                image: "../img/biriyani.jpg",
-            },
+            }
         ];
 
         let tableTag = document.querySelector("#tableId");
@@ -165,7 +159,11 @@
             });
         }
         orderBtn.addEventListener('click', () => {
-            alert("Thank u for Ordering");
+            if (fetchTotal() > 0) {
+                alert("Thank u for Ordering");
+            }else{
+                alert('cart is empty');
+            }
         });
     </script>
 </body>

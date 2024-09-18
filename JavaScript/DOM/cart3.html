@@ -89,23 +89,27 @@
             },
         ];
         tableTag.innerHTML = "<tr><th>S.no</th><th>Img</th><th>Name</th><th>Price</th><th>Qty</th><th>Total</th></tr>";
+        console.log("waiting " + items.length);
 
         for (let i = 0; i < items.length; i++) {
+            console.log(`loading ${i}`);
             count[i] = 0;
-            snoTag[i].innerHTML = items[i].Sno;
-            nameTag[i].innerHTML = items[i].name;
-            priceTag[i].innerHTML = items[i].price;
-            btnTag[i].innerHTML = ` <button class="qtyBtn" onclick="increment(${i})">+</button> <span class="qtyCls">0</span> <button
-                            class="qtyBtn" onclick="decrement(${i})">-</button>`;
-            imgTag[i].innerHTML = `<img src="${items[i].image}" alt="error" height=70px>`;
-            // tableTag.innerHTML += '<tr><td class="sn">0</td><td class="img"></td><td class="nameCls">name</td><td class="priceCls">price</td><td><div class="qty_UIX"></div></td><td class="totalCls">0</td></tr>';
-            tableTag.innerHTML += "<tr><td>hii</td></tr>"
+            // snoTag[i].innerHTML = items[i].Sno;
+            // nameTag[i].innerHTML = items[i].name;
+            // priceTag[i].innerHTML = items[i].price;
+            // btnTag[i].innerHTML = ` <button class="qtyBtn" onclick="increment(${i})">+</button> <span class="qtyCls">0</span> <button
+            //                 class="qtyBtn" onclick="decrement(${i})">-</button>`;
+            // imgTag[i].innerHTML = `<img src="${items[i].image}" alt="error" height=70px>`;
+            // // tableTag.innerHTML += '<tr><td class="sn">0</td><td class="img"></td><td class="nameCls">name</td><td class="priceCls">price</td><td><div class="qty_UIX"></div></td><td class="totalCls">0</td></tr>';
+            // tableTag.innerHTML += "<tr><td>hii</td></tr>"
         }
-
+        console.log("check");
+        
         function increment(num) {
             count[num]++;
             qty[num].innerHTML = count[num];
             total[num].innerHTML = items[num].price * count[num];
+            
         }
 
         function decrement(num) {
